@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+    font-family: 'Anton';
+    src: url('/fonts/anton/anton-latin-400-normal.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Space Grotesk Light */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/anton/anton-latin-300-normal.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Space Grotesk Regular */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/space-grotesk/space-grotesk-latin-400-normal.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Space Grotesk Medium */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/fonts/space-grotesk/space-grotesk-latin-500-normal.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@theme {
+    --font-anton: 'Anton', sans-serif;
+    --font-grotesk: 'Space Grotesk', sans-serif;
+}
+
+:root {
+    --header-h: 5.25rem;
+}
+
+.nav-link {
+  @apply inline-block hover:opacity-70 pl-4 pr-8 tracking-tighter font-anton uppercase dark:text-black text-white transition-all duration-300 hover:translate-x-4 ;
+}
+.bg-line {
+  @apply w-5 h-0.5 dark:bg-white block bg-black/60
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.35s;
+  }
+}
