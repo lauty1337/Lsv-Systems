@@ -6,9 +6,9 @@ import IAHero from '../assets/svgs/IAHero.svg'
 import ArrowDown from '../assets/svgs/ArrowDown.svg'
 ---
 
-<section class="flex-col flex justify-center min-h-[85vh] md:min-h-[92dvh] overflow-hidden z-10 px-2">
-    <div class="flex flex-col items-center gap-y-9 2xl:w-[1900px] 2xl:mx-auto">
-        <span data-hero-subtitle class="text-center  text-neutral-500 border-b border-neutral-500/20 dark:text-neutral-400 dark:border-neutral-400/20 pb-2 text-sm  font-grotesk md:text-sm tracking-tighter">
+<section data-hero class="invisible flex-col flex justify-center min-h-[85vh] md:min-h-[92dvh] overflow-hidden z-10 px-2">
+    <div class="flex flex-col items-center gap-y-5 2xl:w-[1900px] 2xl:mx-auto">
+        <span data-hero-subtitle class="text-center text-neutral-500 dark:text-neutral-400 text-sm font-grotesk tracking-tighter">
             Web & Automatización con IA
         </span>
         <h1 class="uppercase font-anton text-center items-center flex flex-col text-[42px] text-balance z-10 leading-18 md:leading-38 md:text-8xl 2xl:text-[150px] xl:leading-50">
@@ -37,10 +37,10 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
                 <span data-hero-arrow-text class="text-blue-500 overflow-hidden">que crecen</span>
             </span>
         </h1>
-        <a href="#" class="inline-flex gap-3 group font-grotesk items-center justify-center px-3 py-1.5 text-sm bg-black text-white dark:bg-white dark:text-black md:text-lg font-medium transition-all duration-200 hover:bg-neutral-900 dark:hover:bg-neutral-300">
+        <a href="#" data-hero-btn class="inline-flex gap-3 group font-grotesk items-center justify-center px-3 py-1.5 text-sm bg-black text-white dark:bg-white dark:text-black md:text-lg font-medium transition-all duration-200 hover:bg-neutral-700 dark:hover:bg-neutral-400">
             Empezar proyecto
             <span class="pl-3 border-l border-white/30 dark:border-black/30 ">
-            <ArrowDown class="group-hover:translate-y-0.5 transition-transform duration-200"/>
+            <ArrowDown class="group-hover:translate-y-1 size-5 transition-transform duration-200"/>
             </span>
         </a>
     </div>

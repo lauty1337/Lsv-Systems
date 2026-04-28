@@ -1,7 +1,12 @@
 import gsap from 'gsap';
 
 import { SplitText } from 'gsap/SplitText';
-gsap.registerPlugin(SplitText);
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
+
+const hero = document.querySelector('[data-hero]');
+const heroBtn = document.querySelector('[data-hero-btn]');
 
 const heroIconWeb = document.querySelector('[data-hero-web]');
 const heroIconIA = document.querySelector('[data-hero-ia]');
@@ -14,33 +19,51 @@ const heroSubtitle = new SplitText('[data-hero-subtitle]', { type: 'chars', mask
 
 
 gsap.set(heroWebText.chars, { y: 200, });
-gsap.set(heroIAText.chars, { y: 200, });
-gsap.set(heroArrowText.chars, { y: 200, });
-gsap.set(heroSubtitle.chars, { y: 200, });
+gsap.set(heroIAText.chars, { y: 200,});
+gsap.set(heroArrowText.chars, { y: 200,});
+gsap.set(heroSubtitle.chars, { y: 200,});
 
 
 gsap.set(heroIconWeb, {autoAlpha: 0})
 gsap.set(heroIconIA, {x: 325, y: -100, autoAlpha: 0})
 gsap.set(heroIconArrow, {x: 50, y: -300, autoAlpha: 0})
+gsap.set(hero, { autoAlpha: 1 })
 
-const tlHero = gsap.timeline({});
+const tlHero = gsap.timeline({
+    defaults: {
+        duration: 0.5
+    }
+});
 
 tlHero
 
-.to(heroIconWeb, {autoAlpha: 0, x: 330, y: 100,  duration: 0.2})
-.to(heroIconWeb, {autoAlpha: 1, duration: 0.3})
-.to(heroIconIA, {autoAlpha: 0, x: 325, y: -100, rotate: 0, duration: 0.2},'<')
-.to(heroIconIA, {autoAlpha: 1, duration: 0.3},'<=+0.1s')
-.to(heroIconArrow, {autoAlpha: 0, x: 50, y: -300, rotate: 0, duration: 0.2},'<')
-.to(heroIconArrow, {autoAlpha: 1, duration: 0.3},'<=+0.1s')
+.fromTo(heroIconWeb, {autoAlpha: 0, x: 330, y: 100,  }, {autoAlpha: 1, duration: 0.3})
+.fromTo(heroIconIA, {autoAlpha: 0, x: 325, y: -100, rotate: 0, }, {autoAlpha: 1, duration: 0.3}, '<')
+.fromTo(heroIconArrow, {autoAlpha: 0, x: 50, y: -300, rotate: 0, }, {autoAlpha: 1, duration: 0.3}, '<')
 
-.to(heroIconWeb, {x: 0, y: 0, duration: 0.7, ease: 'back.out(2)'},'<+0.2s')
-.to(heroIconIA, {x: 0, y: 0, duration: 0.7, ease: 'back.out(2)'},'<+0.2s')
-.to(heroIconArrow, {x: 0, y: 0, duration: 0.7, rotate: 50, ease: 'back.out(2)'},'<+=0.1s')
+.to(heroIconWeb, {x: 0, y: 0, duration: 0.6,  ease: 'back.out(2)'},'<+0.2s')
+.to(heroIconIA, {x: 0, y: 0, duration: 0.6,  ease: 'back.out(2)'},'<+0.2s')
+.to(heroIconArrow, {x: 0, y: 0, duration: 0.6,  rotate: 50, ease: 'back.out(2)'},'<+=0.1s')
 
-.to(heroSubtitle.chars, { y: 0, duration: 0.3, stagger: 0.03 }, '<')
-.to(heroWebText.chars, { y: 0, duration: 0.3, stagger: 0.03 }, '<+0.5s')
-.to(heroIAText.chars, { y: 0, duration: 0.3, stagger: 0.03 }, '<+0.2s')
-.to(heroArrowText.chars, { y: 0, duration: 0.3, stagger: 0.03 }, '<+0.3s')
+.to(heroSubtitle.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<')
+.to(heroWebText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.1s')
+.to(heroIAText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.2s')
+.to(heroArrowText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.3s')
+
+.fromTo(heroBtn, {y: 200, autoAlpha: 0}, {y: 0, autoAlpha: 1}, '<+0.2s')
+
+
+const tlScroll = gsap.timeline({
+    scrollTrigger: {
+        trigger: hero,
+        start: '50% top',
+        end: 'bottom top',
+        markers: true,
+        scrub: true,
+    },
+})
+
+tlScroll 
+.to(hero, { scale: 0.1, filter: 'blur(10px)', ease: 'none' })
 
 
