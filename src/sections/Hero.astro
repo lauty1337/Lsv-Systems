@@ -7,14 +7,14 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
 ---
 
 <section data-hero class="invisible flex-col flex justify-center min-h-[85vh] md:min-h-[92dvh] overflow-hidden z-10 px-2">
-    <div class="flex flex-col items-center gap-y-5 2xl:w-[1900px] 2xl:mx-auto">
+    <div class="mx-auto flex w-full max-w-[1900px] flex-col items-center gap-y-5">
         <span data-hero-subtitle class="text-center text-neutral-500 dark:text-neutral-400 text-sm font-grotesk tracking-tighter">
-            Web & Automatización con IA
+            Para marcas, negocios y profesionales que quieren escalar.
         </span>
-        <h1 class="uppercase font-anton text-center items-center flex flex-col text-[42px] text-balance z-10 leading-18 md:leading-38 md:text-8xl 2xl:text-[150px] xl:leading-50">
+        <h1 class="uppercase font-anton text-center items-center flex flex-col text-[42px] text-balance z-10 leading-18 md:text-7xl md:leading-38 2xl:text-[clamp(96px,8vw,150px)] xl:leading-50">
             
             <span>
-                <span data-hero-web-text class="overflow-hidden">Webs</span>
+                <span data-hero-web-text class="overflow-hidden ">Webs</span>
                     <span data-hero-web class="inline-flex items-center justify-center p-1 rounded-lg bg-blue-500">
                         <WebHero class="size-7 md:size-20 2xl:size-30 text-white dark:text-black" />
                     </span>
@@ -37,12 +37,17 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
                 <span data-hero-arrow-text class="text-blue-500 overflow-hidden">que crecen</span>
             </span>
         </h1>
-        <a href="#" data-hero-btn class="inline-flex gap-3 group font-grotesk items-center justify-center px-3 py-1.5 text-sm bg-black text-white dark:bg-white dark:text-black md:text-lg font-medium transition-all duration-200 hover:bg-neutral-700 dark:hover:bg-neutral-400">
+        <div class="flex flex-col font md:flex-row gap-6 font-grotesk text-sm md:text-base font-medium">
+        <a href="#" data-hero-btn class="inline-flex gap-3 group items-center justify-center px-3 py-1.5 text-white dark:text-black bg-black dark:bg-white transition-all duration-200 hover:bg-neutral-700 dark:hover:bg-neutral-300 hover:scale-105">
             Empezar proyecto
             <span class="pl-3 border-l border-white/30 dark:border-black/30 ">
             <ArrowDown class="group-hover:translate-y-1 size-5 transition-transform duration-200"/>
             </span>
         </a>
+        <a href="#" data-hero-btn class="inline-flex gap-3 group items-center justify-center px-3 py-1.5 border border-black/30 dark:border-white/30 hover:bg-neutral-200    dark:hover:bg-neutral-800 hover:scale-105 transition-all duration-200">
+            Ver proyectos
+        </a>
+        </div>
     </div>
     
 </section>

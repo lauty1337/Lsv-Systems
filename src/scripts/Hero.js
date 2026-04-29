@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const hero = document.querySelector('[data-hero]');
-const heroBtn = document.querySelector('[data-hero-btn]');
+const heroBtn = document.querySelectorAll('[data-hero-btn]');
 
 const heroIconWeb = document.querySelector('[data-hero-web]');
 const heroIconIA = document.querySelector('[data-hero-ia]');
@@ -46,17 +46,17 @@ tlHero
 .to(heroIconArrow, {x: 0, y: 0, duration: 0.6,  rotate: 50, ease: 'back.out(2)'},'<+=0.1s')
 
 .to(heroSubtitle.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<')
-.to(heroWebText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.1s')
+.to(heroWebText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<=0.7s')
 .to(heroIAText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.2s')
 .to(heroArrowText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.3s')
 
-.fromTo(heroBtn, {y: 200, autoAlpha: 0}, {y: 0, autoAlpha: 1}, '<+0.2s')
+.fromTo(heroBtn, {y: 200, autoAlpha: 0}, {y: 0, autoAlpha: 1, stagger: 0.2, clearProps: 'transform,opacity'}, '<+0.1s')
 
 
 const tlScroll = gsap.timeline({
     scrollTrigger: {
         trigger: hero,
-        start: '50% top',
+        start: '40% top',
         end: 'bottom top',
         markers: true,
         scrub: true,
@@ -64,6 +64,6 @@ const tlScroll = gsap.timeline({
 })
 
 tlScroll 
-.to(hero, { scale: 0.1, filter: 'blur(10px)', ease: 'none' })
+.to(hero, { scale: 0.8, filter: 'blur(3px)', ease: 'none' })
 
 
