@@ -1,5 +1,24 @@
 import gsap from 'gsap';
 
+const header = document.querySelector('header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY
+    if (currentScrollY <= 10) {
+      header.classList.remove('-translate-y-full')
+      lastScrollY = currentScrollY
+      return
+    }
+    if (currentScrollY > lastScrollY) {
+      header.classList.add('-translate-y-full')
+    } else {
+      header.classList.remove('-translate-y-full')
+    }
+    lastScrollY = currentScrollY
+  })
+
+
 const themeBtnDark = document.querySelector('[data-theme-btn="dark"]');
 const themeBtnLight = document.querySelector('[data-theme-btn="light"]');
 

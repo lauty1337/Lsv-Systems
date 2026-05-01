@@ -18,10 +18,7 @@ const heroArrowText = new SplitText('[data-hero-arrow-text]', { type: 'chars', m
 const heroSubtitle = new SplitText('[data-hero-subtitle]', { type: 'chars', mask: 'chars' });
 
 
-gsap.set(heroWebText.chars, { y: 200, });
-gsap.set(heroIAText.chars, { y: 200,});
-gsap.set(heroArrowText.chars, { y: 200,});
-gsap.set(heroSubtitle.chars, { y: 200,});
+
 
 
 gsap.set(heroIconWeb, {autoAlpha: 0})
@@ -45,10 +42,10 @@ tlHero
 .to(heroIconIA, {x: 0, y: 0, duration: 0.6,  ease: 'back.out(2)'},'<+0.2s')
 .to(heroIconArrow, {x: 0, y: 0, duration: 0.6,  rotate: 50, ease: 'back.out(2)'},'<+=0.1s')
 
-.to(heroSubtitle.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<')
-.to(heroWebText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<=0.7s')
-.to(heroIAText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.2s')
-.to(heroArrowText.chars, { y: 0, stagger: 0.03, duration: 0.3}, '<+0.3s')
+.fromTo(heroSubtitle.chars, { y: 200, },  {y: 0, stagger: 0.03, duration: 0.3}, '<')
+.fromTo(heroWebText.chars, { y: 200, },  {y: 0, stagger: 0.03, duration: 0.3}, '<=0.7s')
+.fromTo(heroIAText.chars, { y: 200, },  {y: 0, stagger: 0.03, duration: 0.3}, '<+0.2s')
+.fromTo(heroArrowText.chars, { y: 200, },  {y: 0, stagger: 0.03, duration: 0.3}, '<+0.3s')
 
 .fromTo(heroBtn, {y: 200, autoAlpha: 0}, {y: 0, autoAlpha: 1, stagger: 0.2, clearProps: 'transform,opacity'}, '<+0.1s')
 
@@ -58,12 +55,11 @@ const tlScroll = gsap.timeline({
         trigger: hero,
         start: '40% top',
         end: 'bottom top',
-        markers: true,
-        scrub: true,
+        scrub: 1,
     },
 })
 
 tlScroll 
-.to(hero, { scale: 0.8, filter: 'blur(3px)', ease: 'none' })
+.to(hero, { scale: 0.9, filter: 'blur(3px)', ease: 'none' })
 
 
