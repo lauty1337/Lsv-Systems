@@ -18,6 +18,14 @@ window.addEventListener('scroll', () => {
     lastScrollY = currentScrollY
   })
 
+const initTheme = () => {
+    
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = stored ? stored === 'dark' : prefersDark;
+  document.documentElement.classList.toggle('dark', isDark);
+}
+initTheme();
 
 const themeBtnDark = document.querySelector('[data-theme-btn="dark"]');
 const themeBtnLight = document.querySelector('[data-theme-btn="light"]');

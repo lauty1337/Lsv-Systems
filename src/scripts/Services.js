@@ -13,7 +13,7 @@ serviceCard.forEach((card) => {
     const image = card.querySelector('[data-service-image]');
     const description = card.querySelector('[data-service-description]');
     const price = card.querySelector('[data-service-price]');
-
+    const mobileExplore = card.querySelector('[data-service-explore-mobile]');
     
     const tlService = gsap.timeline({
         scrollTrigger: {
@@ -29,6 +29,8 @@ serviceCard.forEach((card) => {
     .fromTo(title, { yPercent:-200, rotate: -5,opacity:0, filter: 'blur(3px)'}, {yPercent: 8, opacity:1, filter: 'blur(0px)', rotate: 0, duration: 0.35})
     .fromTo(description, {yPercent: 8, opacity:0, filter: 'blur(4px)'}, {yPercent: 0, opacity: 1, filter: 'blur(0px)', duration: 0.2}, '<+=0.1s')
     .fromTo(image, { scale: 0.7}, {scale: 1, duration: 0.6}, '<')
+    .fromTo(mobileExplore, {  opacity:0, scale:0.5, filter: 'blur(4px)'}, {opacity:1, scale:1, filter: 'blur(0px)', duration: 0.2}, '<')
     .fromTo(price, { yPercent:8, opacity:0, filter: 'blur(4px)'}, {yPercent: 0, opacity:1, filter: 'blur(0px)', duration: 0.2}, '<+=0.1s')
+    
 });
 

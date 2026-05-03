@@ -6,7 +6,7 @@ import IAHero from '../assets/svgs/IAHero.svg'
 import ArrowDown from '../assets/svgs/ArrowDown.svg'
 ---
 
-<section data-hero class="invisible flex-col flex justify-center min-h-[91vh] overflow-hidden z-10 px-2">
+<section data-hero id="hero" class="invisible flex-col flex justify-center min-h-[91vh] overflow-hidden z-10 px-2">
     <div class="mx-auto flex w-full max-w-[1900px] flex-col items-center gap-y-5">
         <span data-hero-subtitle class="text-center text-neutral-500 dark:text-neutral-400 text-sm font-grotesk tracking-tighter">
             Para marcas, negocios y profesionales que quieren escalar.
@@ -21,7 +21,7 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
                 <span data-hero-web-text class="overflow-hidden">que marcan</span>
             </span>
 
-            <span class="md:self-start">
+            <span >
                 <span data-hero-ia-text class="overflow-hidden">IA </span>
                     <span data-hero-ia class="inline-flex">
                         <IAHero class="size-9 md:size-20 2xl:size-30 p-1 text-gray-500 rotate-8 dark:" />
@@ -29,7 +29,7 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
                 <span data-hero-ia-text class="overflow-hidden">que automatiza</span>
             </span>
 
-            <span class="md:self-end">
+            <span>
                 <span data-hero-arrow-text class="text-blue-500 overflow-hidden">Negocios</span>
                     <span data-hero-arrow class="inline-flex p-1 bg-black dark:bg-white rounded-lg -rotate-8">
                         <ArrowHero class="size-7 md:size-20 2xl:size-30 text-white dark:text-black" />
@@ -45,7 +45,7 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
             </span>
         </a>
         <a href="#" data-hero-btn class="inline-flex gap-3 group items-center justify-center px-3 py-1.5 border border-black/30 dark:border-white/30 hover:bg-neutral-200    dark:hover:bg-neutral-800 hover:scale-105 transition-all duration-200">
-            Ver proyectos
+            Ver casos reales
         </a>
         </div>
     </div>

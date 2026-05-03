@@ -22,7 +22,7 @@ const heroSubtitle = new SplitText('[data-hero-subtitle]', { type: 'chars', mask
 
 
 gsap.set(heroIconWeb, {autoAlpha: 0})
-gsap.set(heroIconIA, {x: 325, y: -100, autoAlpha: 0})
+gsap.set(heroIconIA, {x: 400, y: -100, autoAlpha: 0})
 gsap.set(heroIconArrow, {x: 50, y: -300, autoAlpha: 0})
 gsap.set(hero, { autoAlpha: 1 })
 
@@ -35,7 +35,7 @@ const tlHero = gsap.timeline({
 tlHero
 
 .fromTo(heroIconWeb, {autoAlpha: 0, x: 330, y: 100,  }, {autoAlpha: 1, duration: 0.3})
-.fromTo(heroIconIA, {autoAlpha: 0, x: 325, y: -100, rotate: 0, }, {autoAlpha: 1, duration: 0.3}, '<')
+.fromTo(heroIconIA, {autoAlpha: 0, x: 270, y: -100, rotate: 0, }, {autoAlpha: 1, duration: 0.3}, '<')
 .fromTo(heroIconArrow, {autoAlpha: 0, x: 50, y: -300, rotate: 0, }, {autoAlpha: 1, duration: 0.3}, '<')
 
 .to(heroIconWeb, {x: 0, y: 0, duration: 0.6,  ease: 'back.out(2)'},'<+0.2s')
@@ -60,6 +60,6 @@ const tlScroll = gsap.timeline({
 })
 
 tlScroll 
-.to(hero, { scale: 0.9, filter: 'blur(3px)', ease: 'none' })
+.to(hero, { scale: 0.95, filter: 'blur(2 px)', ease: 'none' })
 
 

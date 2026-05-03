@@ -11,7 +11,15 @@ import Footer from '../sections/Footer.astro';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/LSV.ico" />
-		<title>LSV Systems - Desarrollo web y automatización de procesos</title>
+		<title>LSV Systems | Desarrollo web y automatización de procesos</title>
+		<meta name="description" content="LSV Systems es una agencia digital de desarrollo web y automatización de procesos. Ofrecemos soluciones personalizadas para marcas, negocios y profesionales que quieren escalar." />
+		<meta name="keywords" content="LSV Systems, Agencia digital, Desarrollo web, automatizacion de procesos, Desarrollo de E-Commerces, Desarrollo de Landing Pages, SEO, " />
+		<meta name="author" content="LSV Systems" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="bingbot" content="index, follow" />
+		<meta name="yandexbot" content="index, follow" />
+
 		<script is:inline>
 			(() => {
 				const stored = localStorage.getItem('theme');
@@ -20,12 +28,14 @@ import Footer from '../sections/Footer.astro';
 				document.documentElement.classList.toggle('dark', isDark);
 			})();
 		</script>
+
 	</head>
-	<body class="min-h-dvh flex flex-col text-black dark:text-white dark:bg-black transition-colors duration-300 ease-out">
+	<body class=" text-black dark:text-white/90 dark:bg-black transition-colors duration-300 ease-out">
+
 		<Header />	
-		<main class="flex-1 flex flex-col">
-			<slot />
-		</main>
+		    <main class="flex-1 flex flex-col">
+			    <slot />
+		    </main>
 		<Footer />
 
 		<script>
