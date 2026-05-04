@@ -46,7 +46,7 @@
 
 
 .nav-link {
-  @apply inline-block hover:opacity-70 pl-4 pr-8 tracking-tighter font-anton uppercase dark:text-black text-white transition-all duration-300 hover:translate-x-4 ;
+  @apply inline-block hover:opacity-70 pl-4 pr-8 tracking-tighter font-anton uppercase dark:text-black text-white transition-all duration-300 hover:translate-x-4;
 }
 .bg-line {
   @apply w-5 h-0.5 dark:bg-white block bg-black/60
