@@ -26,6 +26,9 @@ gsap.set(heroIconIA, {x: 400, y: -100, autoAlpha: 0})
 gsap.set(heroIconArrow, {x: 50, y: -300, autoAlpha: 0})
 gsap.set(hero, { autoAlpha: 1 })
 
+
+
+
 const tlHero = gsap.timeline({
     defaults: {
         duration: 0.5
@@ -61,5 +64,8 @@ const tlScroll = gsap.timeline({
 
 tlScroll 
 .to(hero, { scale: 0.95, filter: 'blur(2 px)', ease: 'none' })
+
+
+
 
 

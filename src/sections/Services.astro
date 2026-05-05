@@ -46,6 +46,7 @@ const services = [
         ],
         z: 'z-20',
         bg: 'bg-white',
+        darkBg: 'dark:bg-black',
         url: 'https://www.mastercred.com',
         imageExample: '/src/assets/images/LogoMastercred.webp',
     },
@@ -65,13 +66,13 @@ const services = [
         imageExample: '/src/assets/images/projects/MockupMasterCred.png',
         z: 'z-30',
         bg: 'bg-gray-100',
-        darkBg: 'dark:bg-neutral-900',
+        darkBg: 'dark:bg-neutral-950',
     }
 ]
 ---
 <section id="services" class="relative">
     {services.map((service) => (
-        <article data-service class={`min-h-screen overflow-hidden px-3 sticky top-0 ${service.z} ${service.bg} ${service.darkBg}`}>
+        <article data-service class={`min-h-screen overflow-hidden px-3 sticky top-0 ${service.z} ${service.bg} ${service.darkBg} clip-section`}>
             <div class="grid grid-cols-2 gap-y-10 py-20 md:grid-cols-3">
 
                 {/* Enfoque y etiquetas  */}
@@ -114,9 +115,9 @@ const services = [
                         </div>
 
                         {/* Texto de Explorar en Mobile */}
-                        <div data-service-explore-mobile class="absolute inset-0 left-15 bottom-10 items-end font-anton uppercase md:hidden flex">
+                        <div data-service-explore-mobile class="absolute inset-0 left-15  bottom-10 items-end font-anton uppercase md:hidden flex">
                             <span class="flex items-center bg-black text-white px-2 py-1 ml-2 mb-2 shadow-lg shadow-black/30">
-                                <ArrowService class="size-5 text-white"/>
+                                <ArrowService class="size-5 rotate-45 mr-2 text-white"/>
                                 <span>Explorar</span>
                             </span>
                         </div>

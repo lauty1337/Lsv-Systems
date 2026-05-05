@@ -1,4 +1,7 @@
 {
+  "overrides": {
+    "vite": "^7"
+  },
   "name": "lsvsystems",
   "type": "module",
   "version": "0.0.1",
