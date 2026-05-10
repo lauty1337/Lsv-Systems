@@ -51,16 +51,6 @@
 .bg-line {
   @apply w-5 h-0.5 dark:bg-white block bg-black/60
 }
-.clip-section {
-  clip-path: polygon(
-    0 20px,
-    50% 20px,
-    50% 0,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-}
 
 
 @media (prefers-reduced-motion: no-preference) {

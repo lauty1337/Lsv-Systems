@@ -24,9 +24,9 @@ const services = [
         ],
         imageExample: '/src/assets/images/projects/MockupMasterCred.png',
         z: 'z-10',
-        bg: 'bg-gray-100',
-        darkBg: 'dark:bg-neutral-950',
+        bg: 'bg-gray-100 dark:bg-neutral-900',
     },
+
     {
         title: 'E-Commerces que venden',
         description: 'Diseñadas para transformar visitas en consultas reales.',
@@ -45,8 +45,7 @@ const services = [
 
         ],
         z: 'z-20',
-        bg: 'bg-white',
-        darkBg: 'dark:bg-black',
+        bg: 'bg-white dark:bg-neutral-950',
         url: 'https://www.mastercred.com',
         imageExample: '/src/assets/images/LogoMastercred.webp',
     },
@@ -65,14 +64,13 @@ const services = [
         ],
         imageExample: '/src/assets/images/projects/MockupMasterCred.png',
         z: 'z-30',
-        bg: 'bg-gray-100',
-        darkBg: 'dark:bg-neutral-950',
+        bg: 'bg-gray-100 dark:bg-neutral-900',
     }
 ]
 ---
-<section id="services" class="relative">
+<section id="services" data-service-container class="relative ">
     {services.map((service) => (
-        <article data-service class={`min-h-screen overflow-hidden px-3 sticky top-0 ${service.z} ${service.bg} ${service.darkBg} clip-section`}>
+        <article data-service class={`min-h-screen overflow-hidden px-3 sticky top-0 ${service.z} ${service.bg}`}>
             <div class="grid grid-cols-2 gap-y-10 py-20 md:grid-cols-3">
 
                 {/* Enfoque y etiquetas  */}
@@ -125,7 +123,7 @@ const services = [
                     <p data-service-price class="mt-5 font-grotesk font-light text-md tracking-wide">
                         Proyectos desde: 
                         <span class="text-emerald-600 font-bold">{service.price}</span> 
-                        <span class="text-neutral-500 text-xs dark:text-neutral-300">· Según alcance</span>
+                        <small class="text-neutral-500 dark:text-neutral-300">· Según alcance</small>
                     </p>
 
                 </div>
@@ -146,5 +144,15 @@ const services = [
             </div>
         </article>
     ))}
+    <div class="
+    pointer-events-none
+    absolute bottom-0 left-0 w-full h-32
+    bg-linear-to-b
+    from-transparent
+    to-white
+    dark:to-[#0d0f12]
+    z-40
+  "></div>
 </section>
+
 <script src="../scripts/Services.js"></script>

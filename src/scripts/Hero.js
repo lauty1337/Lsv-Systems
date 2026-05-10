@@ -17,17 +17,10 @@ const heroIAText = new SplitText('[data-hero-ia-text]', { type: 'chars', mask: '
 const heroArrowText = new SplitText('[data-hero-arrow-text]', { type: 'chars', mask: 'chars' });
 const heroSubtitle = new SplitText('[data-hero-subtitle]', { type: 'chars', mask: 'chars' });
 
-
-
-
-
 gsap.set(heroIconWeb, {autoAlpha: 0})
 gsap.set(heroIconIA, {x: 400, y: -100, autoAlpha: 0})
 gsap.set(heroIconArrow, {x: 50, y: -300, autoAlpha: 0})
 gsap.set(hero, { autoAlpha: 1 })
-
-
-
 
 const tlHero = gsap.timeline({
     defaults: {
