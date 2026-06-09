@@ -1,5 +1,7 @@
 import gsap from 'gsap';
 
+document.addEventListener('astro:page-load', () => {
+
 const header = document.querySelector('header');
 let lastScrollY = window.scrollY;
 
@@ -95,3 +97,4 @@ navToggler.addEventListener('click', () => {
     }
 })
 
+});

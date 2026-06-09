@@ -1,26 +1,53 @@
 ---
-import { projects } from '../data/projects.ts'
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import ArrowService from '../assets/svgs/ArrowService.svg';
+
+const projects = await getCollection('projects');
 ---
-
-
-
-
-
-
-
-<section id="projects" class="bg-white min-h-screen py-10">
-    <div class="px-3 mb-30">
+<section id="projects" class="bg-white min-h-screen py-10 dark:bg-[#0d0f12]">
+    <div class="mb-30 px-3">
         <div class="flex justify-between items-center text-lg md:text-3xl">
-            <span class="font-anton uppercase translate-y-6 md:translate-y-8">Ultimos</span>
+            <span class="font-anton uppercase translate-y-6 md:translate-y-15">Ultimos</span>
             <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">Landings pages</span>
             <span class="font-anton uppercase"> Proyectos </span>
             <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">E-Commerces</span>
-            <span class="font-anton uppercase translate-y-6 md:translate-y-8">2026©</span>
+            <span class="font-anton uppercase translate-y-6 md:translate-y-15">2026©</span>
         </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-        {projects.map((project)  => ( 
-            <article class="p-1 bg-neutral-100 flex flex-col">
+    <div class="grid grid-cols-1 md:grid-cols-3 mx-auto max-w-xl md:max-w-[1700px] px-3 gap-18 ">
+        {projects.map((entry) => (
+            <article class={`p-0.5 h-fit hover:scale-105 bg-black dark:bg-neutral-100 sticky group top-2 flex flex-col text-white dark:text-black hover:-rotate-2 transition-transform duration-200 ${entry.data.rotate} ${entry.data.mt} `}>
+
+            <a href={`/projects/${entry.id}`}  aria-label={`Ver información del proyecto ${entry.data.title}`} class="overflow-hidden relative block">
+
+                <div class=" hidden md:flex relative -translate-y-25 group-hover:translate-y-0 transition-all duration-200 mix-blend-multiply ">
+                    <p class="text-8xl absolute font-anton uppercase text-black flex ">
+                        <ArrowService class="rotate-45 size-25" />
+                        <span>Explorar</span>
+                    </p>
+                </div>
+                <Image src={entry.data.img} alt={entry.data.title} transition:name={`project-${entry.id}`} class="w-full h-70 md:h-100" />
+                <div class="grid grid-cols-1 md:grid-cols-2 pt-4 pb-8 gap-4 px-2">
+                    <h3 class="font-anton uppercase text-5xl ">
+                        {entry.data.title}
+                    </h3>
+                    <div class="font-grotesk gap-y-2 md:pl-5 flex flex-col text-sm font-medium">
+                        <p>
+                            {entry.data.tags.join(', ')}
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+                            <p class="font-light md:group-hover:-translate-y-20 transition-transform duration-200">
+                                {entry.data.year}
+                            </p>
+                            <p aria-hidden="true" class="font-anton hidden md:block text-right md:translate-y-40 md:group-hover:translate-y-0 transition-transform duration-200 ">
+                                {entry.data.year}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </a>
             </article>
         ))}
     </div>

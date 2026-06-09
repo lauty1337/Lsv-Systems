@@ -4,10 +4,11 @@ import WebHero from '../assets/svgs/WebHero.svg'
 import IAHero from '../assets/svgs/IAHero.svg'
 
 import ArrowDown from '../assets/svgs/ArrowDown.svg'
+import SectionBlend from '../components/SectionBlend.astro'
 ---
 
-<section data-hero id="hero" class="invisible flex-col flex justify-center min-h-[91vh] overflow-hidden z-10 px-2">
-    <div class="mx-auto flex w-full max-w-[1900px] flex-col items-center gap-y-5">
+<section data-hero id="hero" class="relative invisible flex flex-col justify-center min-h-[91vh] overflow-hidden z-10 px-2">
+    <div data-hero-content class="mx-auto flex w-full max-w-[1900px] flex-col items-center gap-y-5">
         <span data-hero-subtitle class="text-center pointer-events-none text-neutral-500 dark:text-neutral-400 text-sm font-grotesk tracking-tighter">
             Para marcas, negocios y profesionales que quieren escalar.
         </span>
@@ -15,7 +16,7 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
             
             <span>
                 <span data-hero-web-text class="overflow-hidden">Webs</span>
-                    <span data-hero-web class="inline-flex items-center justify-center p-1 rounded-lg bg-blue-400">
+                    <span data-hero-web class="inline-flex items-center justify-center p-1 rounded-lg bg-blue-600">
                         <WebHero class="size-7 md:size-20 2xl:size-30 text-white dark:text-black" />
                     </span>
                 <span data-hero-web-text class="overflow-hidden">que marcan</span>
@@ -24,38 +25,38 @@ import ArrowDown from '../assets/svgs/ArrowDown.svg'
             <span >
                 <span data-hero-ia-text class="overflow-hidden">IA </span>
                     <span data-hero-ia class="inline-flex">
-                        <IAHero class="size-9 md:size-20 2xl:size-30 p-1 text-gray-500 rotate-8 dark:" />
+                        <IAHero class="size-9 md:size-20 2xl:size-30 p-1 text-gray-500 rotate-8" />
                     </span>
                 <span data-hero-ia-text class="overflow-hidden">que automatiza</span>
             </span>
 
             <span>
-                <span data-hero-arrow-text class="text-blue-400 overflow-hidden">Negocios</span>
+                <span data-hero-arrow-text class="text-blue-600 overflow-hidden">Negocios</span>
                     <span data-hero-arrow class="inline-flex p-1 bg-black dark:bg-white rounded-lg -rotate-8">
                         <ArrowHero class="size-7 md:size-20 2xl:size-30 text-white dark:text-black" />
                     </span>
-                <span data-hero-arrow-text class="text-blue-400 overflow-hidden">que crecen</span>
+                <span data-hero-arrow-text class="text-blue-600 overflow-hidden">que crecen</span>
             </span>
         </h1>
+
         <div class="flex flex-col md:flex-row gap-6 font-grotesk uppercase text-sm md:text-base font-medium">
-
-
-        <a href="#" data-hero-btn class="w-full group inline-flex overflow-hidden h-10 px-3 gap-x-2 items-center dark:text-black text-white border border-black/30 dark:border-white/30 bg-black dark:bg-white relative group">
-            <span class="bg-white dark:bg-black absolute inset-0 translate-y-20 ease group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
-            <span class="group-hover:text-black dark:group-hover:text-white relative z-10 transition-all duration-200">
-                Empezar proyecto
-            </span>
-            <ArrowDown class="size-6 z-20 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" />
-        </a>
-
-        <a href="#"data-hero-btn class="inline-flex relative group text-nowrap items-center justify-center h-10 group">
-            Ver casos reales
-            <span class="underline h-0.5 w-full absolute bottom-0 left-0 bg-black origin-left dark:bg-white scale-x-100 md:scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-        </a>
+            <a href="#" data-hero-btn class="w-full group inline-flex overflow-hidden h-10 px-3 gap-x-2 items-center text-white border border-black/10 dark:border-white/10 bg-blue-600 relative ">
+                <span class="bg-white dark:bg-black absolute inset-0 translate-y-20 ease group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
+                <span class="group-hover:text-blue-600 relative z-10 transition-all duration-200">
+                    Empezar proyecto
+                </span>
+                <ArrowDown class="size-6 z-20 group-hover:text-blue-600 transition-colors duration-200" />
+            </a>
+            <a href="#"data-hero-btn class="inline-flex relative group text-nowrap items-center justify-center h-10 group">
+                Ver casos reales
+                <span class="underline h-0.5 w-full absolute bottom-0 left-0 bg-black origin-middle dark:bg-white scale-x-100 md:scale-x-0 group-hover:scale-x-100  transition-transform duration-300 ease-in-out"></span>
+            </a>
         </div>
-        
     </div>
+
+    <SectionBlend class="to-gray-100 h-10 dark:to-neutral-900" />
 </section>
+
 <script>
-        import '../scripts/Hero.js';
-    </script>
+    import '../scripts/Hero.js';
+</script>

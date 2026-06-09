@@ -2,8 +2,9 @@
 import '../styles/global.css';
 import Header from '../sections/Header.astro';
 import Footer from '../sections/Footer.astro';
+import { ClientRouter } from 'astro:transitions';
 
-
+const { title, description } = Astro.props; 
 ---
 <!doctype html>
 <html lang="es" class="scroll-smooth ">
@@ -11,8 +12,9 @@ import Footer from '../sections/Footer.astro';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/LSV.ico" />
-		<title>LSV Systems | Desarrollo web y automatización de procesos</title>
-		<meta name="description" content="LSV Systems es una agencia digital de desarrollo web y automatización de procesos. Ofrecemos soluciones personalizadas para marcas, negocios y profesionales que quieren escalar." />
+		<title>{title}</title>
+		<ClientRouter />
+		<meta name="description" content={description} />
 		<meta name="keywords" content="LSV Systems, Agencia digital, Desarrollo web, automatizacion de procesos, Desarrollo de E-Commerces, Desarrollo de Landing Pages, SEO, " />
 		<meta name="author" content="LSV Systems" />
 		<meta name="robots" content="index, follow" />
@@ -32,11 +34,11 @@ import Footer from '../sections/Footer.astro';
 	</head>
 	<body class=" text-black dark:text-[#F8FAFC] dark:bg-black transition-colors duration-300 ease-out">
 
-		<Header />	
-		    <main class="flex-1 flex flex-col">
-			    <slot />
-		    </main>
-		<Footer />
+	<Header />	
+		<main class="flex-1 flex flex-col">
+			<slot />
+		</main>
+	<Footer />
 
 		<script>
 			import '../scripts/lenis.js';

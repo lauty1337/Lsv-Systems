@@ -5,12 +5,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
+document.addEventListener('astro:page-load', () => {
+
 const hero = document.querySelector('[data-hero]');
+const heroContent = document.querySelector('[data-hero-content]');
 const heroBtn = document.querySelectorAll('[data-hero-btn]');
 
 const heroIconWeb = document.querySelector('[data-hero-web]');
 const heroIconIA = document.querySelector('[data-hero-ia]');
 const heroIconArrow = document.querySelector('[data-hero-arrow]');
+
+if (!hero) return;
 
 const heroWebText = new SplitText('[data-hero-web-text]', { type: 'chars', mask: 'chars' });
 const heroIAText = new SplitText('[data-hero-ia-text]', { type: 'chars', mask: 'chars' });
@@ -46,19 +51,15 @@ tlHero
 .fromTo(heroBtn, {y: 200, autoAlpha: 0}, {y: 0, autoAlpha: 1, stagger: 0.2, clearProps: 'transform,opacity'}, '<+0.1s')
 
 
-const tlScroll = gsap.timeline({
+.to(heroContent,
+    {
     scrollTrigger: {
-        trigger: hero,
+        trigger: heroContent,
         start: '40% top',
         end: 'bottom top',
         scrub: 1,
     },
-})
+    scale: 0.95, opacity: 0.8, filter: 'blur(3px)', ease: 'none' 
+},)
 
-tlScroll 
-.to(hero, { scale: 0.95, filter: 'blur(2 px)', ease: 'none' })
-
-
-
-
-
+});

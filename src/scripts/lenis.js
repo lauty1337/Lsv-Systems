@@ -1,4 +1,7 @@
 import Lenis from 'lenis'
+
+document.addEventListener('astro:page-load', () => {
+
 const lenis = new Lenis({
   duration: 2,
   smoothWheel: true,
@@ -10,3 +13,5 @@ function raf(time) {
   requestAnimationFrame(raf)
 }
 requestAnimationFrame(raf)
+
+});
