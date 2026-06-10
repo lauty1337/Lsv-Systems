@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 
 import ArrowService from '../assets/svgs/ArrowService.svg';
+import mastercredLanding from '../assets/images/projects/mastercred-landing-mockup.png';
 
 const services = [
     {
@@ -22,7 +23,7 @@ const services = [
             'Formularios e Integraciones',
             'Analítica de visitas'
         ],
-        imageExample: '/src/assets/images/projects/MockupMasterCred.png',
+        imageExample: mastercredLanding,
         z: 'z-10',
         bg: 'bg-gray-100 dark:bg-neutral-900',
     },
@@ -47,7 +48,7 @@ const services = [
         z: 'z-20',
         bg: 'bg-white dark:bg-neutral-950',
         url: 'https://www.mastercred.com',
-        imageExample: '/src/assets/images/LogoMastercred.webp',
+        imageExample: mastercredLanding,
     },
     {
         title: 'Automatización de procesos',
@@ -62,7 +63,7 @@ const services = [
             'Automatización de procesos',
             'Automatización de procesos',
         ],
-        imageExample: '/src/assets/images/projects/MockupMasterCred.png',
+        imageExample: mastercredLanding,
         z: 'z-30',
         bg: 'bg-gray-100 dark:bg-neutral-900',
     }
@@ -101,7 +102,7 @@ const services = [
                     
                     
                     <a href={service.url} aria-label="Ver proyecto" target="_blank" rel="noopener noreferrer" class="relative block -rotate-3 group transition-all duration-500 md:hover:rotate-0">
-                        <Image data-service-image src={service.imageExample}  alt="Imagen de proyecto realizado" width={100} height={100} class="size-full max-w-xl object-cover" />
+                        <Image data-service-image src={service.imageExample}  alt="Imagen de proyecto realizado" class="size-full max-w-xl object-cover" />
 
                         {/* Texto de Explorar en PC */}
                         <div class=" hidden absolute inset-0 items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100 md:flex">

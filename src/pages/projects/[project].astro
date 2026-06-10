@@ -14,14 +14,12 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, description, year, tags, img, url } = entry.data;
+const { title, titleSEO, description, year, tags, img, url } = entry.data;
 ---
 
-<Layout title={`${title} | LSV Systems`} description={description}>
-    <section>
+<Layout title={`${titleSEO}`} description={description}>
         <article>
             <Image src={img} alt={title} class="blur-xs" />
             <div class="absolute inset-0 bg-black/50"></div>
         </article>
-    </section>
 </Layout>

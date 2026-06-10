@@ -1,12 +1,13 @@
 ---
 title: MasterCred
+titleSEO: MasterCred — Landing Page Préstamos Online Argentina | LSV Systems
 year: '©LSV | 2026'
-description: Landing page financiera desarrollada para MasterCred, optimizada para conversión, velocidad, SEO y experiencia de usuario en dispositivos móviles y desktop.
+description: Landing page para plataforma de préstamos en Argentina. Diseño web y desarrollo a cargo de LSV Systems, agencia web argentina.
 tags:
   - Landing Page
   - Prestamos
   - Website
-img: ../../assets/images/projects/MasterCredExample.png
+img: ../../assets/images/projects/mastercred-landing.png
 url: https://www.mastercred.com
 rotate: -rotate-2 hover:rotate-2
 mt: mt-0
