@@ -12,12 +12,12 @@ import SectionBlend from '../components/SectionBlend.astro'
         <span data-hero-subtitle class="text-center text-neutral-500 dark:text-neutral-400 text-sm font-grotesk tracking-tighter">
             Para marcas, negocios y profesionales que quieren escalar.
         </span>
-        <h1 class="uppercase font-anton text-center items-center flex flex-col text-[40px] text-balance z-10 leading-24 md:text-7xl md:leading-38 xl:text-[clamp(96px,8vw,150px)] xl:leading-50">
+        <h1 class="uppercase font-anton text-center items-center flex flex-col text-[40px] text-balance z-10 leading-24 md:text-7xl md:leading-38 xl:text-[clamp(96px,8vw,150px)] 2xl:text-[clamp(180px,8vw,240px)] xl:leading-50">
             
             <span>
                 <span data-hero-web-text class="overflow-hidden">Webs</span>
-                    <span data-hero-web class="inline-flex items-center justify-center p-1 rounded-lg bg-blue-600">
-                        <WebHero class="size-7 md:size-20 2xl:size-30 text-white dark:text-black" />
+                    <span data-hero-web class="inline-flex items-center justify-center p-1 rounded-lg bg-blue-600 dark:bg-blue-400">
+                        <WebHero class="size-7 md:size-17 2xl:size-38 text-white dark:text-black" />
                     </span>
                 <span data-hero-web-text class="overflow-hidden">que marcan</span>
             </span>
@@ -25,29 +25,29 @@ import SectionBlend from '../components/SectionBlend.astro'
             <span >
                 <span data-hero-ia-text class="overflow-hidden">IA </span>
                     <span data-hero-ia class="inline-flex">
-                        <IAHero class="size-9 md:size-20 2xl:size-30 p-1 text-gray-500 rotate-8" />
+                        <IAHero class="size-9 md:size-17 2xl:size-38 p-1 text-gray-500 rotate-8" />
                     </span>
                 <span data-hero-ia-text class="overflow-hidden">que automatiza</span>
             </span>
 
             <span>
-                <span data-hero-arrow-text class="text-blue-600 overflow-hidden">Negocios</span>
+                <span data-hero-arrow-text class="text-blue-600 dark:text-blue-400 overflow-hidden">Negocios</span>
                     <span data-hero-arrow class="inline-flex p-1 bg-black dark:bg-white rounded-lg -rotate-8">
-                        <ArrowHero class="size-7 md:size-20 2xl:size-30 text-white dark:text-black" />
+                        <ArrowHero class="size-7 md:size-17 2xl:size-38 text-white dark:text-black" />
                     </span>
-                <span data-hero-arrow-text class="text-blue-600 overflow-hidden">que crecen</span>
+                <span data-hero-arrow-text class="text-blue-600 dark:text-blue-400 overflow-hidden">que crecen</span>
             </span>
         </h1>
 
         <div class="flex flex-col md:flex-row gap-6 font-grotesk uppercase text-sm md:text-base font-medium">
-            <a href="#" data-hero-btn class="w-full group inline-flex overflow-hidden h-10 px-3 gap-x-2 items-center text-white border border-black/10 dark:border-white/10 bg-blue-600 relative ">
+            <a href="#" data-hero-btn class="w-full group inline-flex overflow-hidden h-10 px-3 gap-x-2 items-center text-white border border-black/10 dark:border-white/10 bg-blue-600 dark:bg-blue-400 relative ">
                 <span class="bg-white dark:bg-black absolute inset-0 translate-y-20 ease group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
-                <span class="group-hover:text-blue-600 relative z-10 transition-all duration-200">
+                <span class="group-hover:text-blue-600 dark:group-hover:text-blue-400 relative z-10 transition-colors duration-500">
                     Empezar proyecto
                 </span>
-                <ArrowDown class="size-6 z-20 group-hover:text-blue-600 transition-colors duration-200" />
+                <ArrowDown class="size-6 z-20 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-500" />
             </a>
-            <a href="#"data-hero-btn class="inline-flex relative group text-nowrap items-center justify-center h-10 group">
+            <a href="#projects"data-hero-btn class="inline-flex relative group text-nowrap items-center justify-center h-10 group">
                 Ver casos reales
                 <span class="underline h-0.5 w-full absolute bottom-0 left-0 bg-black origin-middle dark:bg-white scale-x-100 md:scale-x-0 group-hover:scale-x-100  transition-transform duration-300 ease-in-out"></span>
             </a>

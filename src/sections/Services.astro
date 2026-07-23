@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 
 import ArrowService from '../assets/svgs/ArrowService.svg';
-import mastercredLanding from '../assets/images/projects/mastercred-landing-mockup.png';
+import mastercredLanding from '../assets/images/projects/mastercred/mastercred-landing-mockup.png';
 
 const services = [
     {
@@ -25,7 +25,7 @@ const services = [
         ],
         imageExample: mastercredLanding,
         z: 'z-10',
-        bg: 'bg-gray-100 dark:bg-neutral-900',
+        bg: 'bg-gray-100 dark:bg-neutral-950',
     },
 
     {
@@ -72,15 +72,15 @@ const services = [
 <section id="services" data-service-container class="relative ">
     {services.map((service) => (
         <article data-service class={`min-h-screen overflow-hidden px-3 sticky top-0 ${service.z} ${service.bg}`}>
-            <div class="grid grid-cols-2 gap-y-10 py-20 md:grid-cols-3">
+            <div class="grid grid-cols-2 gap-y-10 py-10 md:py-20 md:grid-cols-3">
 
                 <div class="flex flex-col gap-3 order-2 md:order-1 md:justify-center ">
-                    <p class="text-blue-600 font-anton uppercase md:text-xl">
+                    <p class="text-blue-600 dark:text-blue-400 font-anton uppercase md:text-xl">
                         ( Incluye )
                     </p>
                     <ul class="font-grotesk font-medium text-sm flex flex-col gap-y-2 md:text-lg">
                         {service.tagLeftDates?.map((tag) => (
-                            <li class="border-b border-neutral-200 dark:border-neutral-800 w-fit hover:text-blue-600 transition-all duration-200  md:pb-2">
+                            <li class="border-b border-neutral-200 dark:border-neutral-800 w-fit hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200  md:pb-2">
                                 {tag}
                             </li>
                         ))}
@@ -122,18 +122,18 @@ const services = [
                     </a>
                     <p data-service-price class="mt-5 font-grotesk font-light text-md tracking-wide">
                         Proyectos desde: 
-                        <span class="text-emerald-600 font-bold">{service.price}</span> 
-                        <small class="text-neutral-500 dark:text-neutral-300">· Según alcance</small>
+                        <span class="text-emerald-600 dark:text-emerald-400 font-bold"> {service.price}</span> 
+                        <small class="text-neutral-500 dark:text-neutral-300"> · Según alcance</small>
                     </p>
                 </div>
 
                 <div class="justify-items-end order-3 mt-6 md:justify-center flex flex-col"> 
-                    <p class="text-blue-600 font-anton md:text-xl uppercase mb-3 text-right">
+                    <p class="text-blue-600 dark:text-blue-400 font-anton md:text-xl uppercase mb-3 text-right">
                         ( Enfoque )
                     </p>
                     <ul class="font-grotesk font-medium text-sm md:text-lg gap-y-2 flex flex-col items-end">
                         {service.tagRightDates?.map((tag) => (
-                            <li class="border-b border-neutral-200 dark:border-neutral-800 w-fit hover:text-blue-600 transition-all duration-200  md:pb-2">
+                            <li class="border-b border-neutral-200 dark:border-neutral-800 w-fit hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200  md:pb-2">
                                 {tag}
                             </li>
                         ))}

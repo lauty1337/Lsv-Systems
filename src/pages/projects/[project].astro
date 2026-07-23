@@ -14,12 +14,13 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, titleSEO, description, year, tags, img, url } = entry.data;
+const { title, titleSEO, description, year, tags, imgHero, url } = entry.data;
 ---
 
 <Layout title={`${titleSEO}`} description={description}>
-        <article>
-            <Image src={img} alt={title} class="blur-xs" />
-            <div class="absolute inset-0 bg-black/50"></div>
+        <article class="relative overflow-hidden">
+            
+            <Image src={imgHero} transition:name={`project-${entry.id}-hero`} alt={title} class="blur-xs w-full h-screen" />
+            
         </article>
 </Layout>

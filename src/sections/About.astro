@@ -1,0 +1,57 @@
+---
+const leftBlocks = [
+    {
+        label: '( Trabajo para resultados, no para clientes )',
+        text: 'Soy un desarrollador y diseñador freelance que entiende que una página web no es un gasto, es una inversión. Cada proyecto que tomo lo trato como si fuera propio: con criterio, con cuidado y con el objetivo claro de que le genere valor real al negocio detrás. No tengo equipos de 30 personas ni procesos burocráticos. Tenés acceso directo a quien hace el trabajo.',
+    },
+    {
+        label: '( Sin silencios. Sin sorpresas. )',
+        text: 'Uno de los mayores problemas al contratar un desarrollador es la incertidumbre: silencio de días, entregas que no eran lo esperado, cambios que se cobran de más. Acá eso no pasa. Comunicación clara desde el primer mensaje, fechas reales y un proceso ordenado que te mantiene informado en cada etapa.',
+    },
+];
+
+const rightBlocks = [
+    {
+        label: '( Diseñado para convertir. Construido para durar )',
+        text: 'Cada decisión de diseño tiene un por qué. El color, la tipografía, la jerarquía visual, los tiempos de carga, la experiencia en mobile: nada es al azar. Construyo páginas que se ven bien el primer día y siguen funcionando el segundo año.',
+    },
+    {
+        label: '( Ya tiene quién la haga bien. )',
+        text: 'Si llegaste hasta acá es porque estás buscando algo más que una página bonita. Buscás algo que funcione, que represente tu negocio y que esté hecho con criterio profesional. Eso es exactamente lo que hago.',
+    },
+];
+
+---
+
+<section id="about" class="about-section relative z-0 py-20 md:py-32 pb-32 md:pb-40">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 px-3 max-w-[1700px] mx-auto items-start">
+        <div class="flex flex-col gap-[28vh] md:gap-[38vh] order-2 md:order-1 self-start max-w-md">
+            {leftBlocks.map((block) => (
+                <article>
+                    <h4 class="font-anton uppercase text-sm md:text-xl mb-4">{block.label}</h4>
+                    <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
+                </article>
+            ))}
+        </div>
+
+        <div class="sticky top-24 md:top-32 order-1 md:order-2 flex flex-col items-center justify-center text-center self-start h-fit text-shadow-lg text-shadow-black/15 dark:text-shadow-white/15">
+            <span data-about-number class="text-9xl md:text-[280px] lg:text-[300px] font-anton leading-none">
+                99
+            </span>
+            <small class="font-grotesk italic mt-2 text-sm md:text-base">
+                De la complejidad a la claridad.
+            </small>
+        </div>
+
+        <div class="flex flex-col gap-[28vh] md:gap-[38vh] order-3 self-start max-w-md md:mt-[18vh]">
+            {rightBlocks.map((block) => (
+                <article data-about-block>
+                    <h4 class="font-anton uppercase text-sm md:text-xl mb-4">{block.label}</h4>
+                    <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
+                </article>
+            ))}
+        </div>
+    </div>
+</section>
+
+<script src="../scripts/About.js"></script>

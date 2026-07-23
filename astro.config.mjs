@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, svgoOptimizer } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -9,7 +9,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   experimental: {
-    svgo: true,
+    svgOptimizer: svgoOptimizer(),
   },
   devToolbar: {
     enabled: false,

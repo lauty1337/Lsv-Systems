@@ -7,7 +7,8 @@ tags:
   - Landing Page
   - Prestamos
   - Website
-img: ../../assets/images/projects/mastercred-landing.png
+img: ../../assets/images/projects/mastercred/mastercred-landing.png
+imgHero: ../../assets/images/projects/mastercred/mastercred-landing-hero.png
 url: https://www.mastercred.com
 rotate: -rotate-2 hover:rotate-2
 mt: mt-0
