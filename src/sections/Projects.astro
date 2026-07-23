@@ -16,7 +16,7 @@ const projects = await getCollection('projects');
             <span class="font-anton uppercase translate-y-6 md:translate-y-15">2026©</span>
         </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 mx-auto max-w-xl md:max-w-[1700px] px-3 gap-18 ">
+    <div class="grid grid-cols-1 md:grid-cols-3 mx-auto max-w-xl md:max-w-425 px-3 gap-18 ">
         {projects.map((entry) => (
             <article class={`p-0.5 h-fit hover:scale-105 bg-black dark:bg-neutral-100 sticky md:static group top-18 flex flex-col text-white dark:text-black hover:-rotate-2 transition-transform duration-200 ${entry.data.rotate} ${entry.data.mt} `}>
 
