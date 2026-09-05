@@ -20,21 +20,11 @@ const rightBlocks = [
         text: 'Si llegaste hasta acá es porque estás buscando algo más que una página bonita. Buscás algo que funcione, que represente tu negocio y que esté hecho con criterio profesional. Eso es exactamente lo que hago.',
     },
 ];
-
 ---
 
-<section id="about" class="about-section relative z-0 py-20 md:py-32 pb-32 md:pb-40">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 px-3 max-w-[1700px] mx-auto items-start">
-        <div class="flex flex-col gap-[28vh] md:gap-[38vh] order-2 md:order-1 self-start max-w-md">
-            {leftBlocks.map((block) => (
-                <article>
-                    <h4 class="font-anton uppercase text-sm md:text-xl mb-4">{block.label}</h4>
-                    <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
-                </article>
-            ))}
-        </div>
-
-        <div class="sticky top-24 md:top-32 order-1 md:order-2 flex flex-col items-center justify-center text-center self-start h-fit text-shadow-lg text-shadow-black/15 dark:text-shadow-white/15">
+<section id="about" class="about-section relative z-0 py-20">
+    <div class="relative max-w-425 mx-auto px-3">
+        <div class="sticky top-24 mb-5 md:top-32  mx-auto flex w-fit flex-col items-center justify-center text-center text-shadow-lg text-shadow-black/15 dark:text-shadow-white/15">
             <span data-about-number class="text-9xl md:text-[280px] lg:text-[300px] font-anton leading-none">
                 99
             </span>
@@ -43,14 +33,29 @@ const rightBlocks = [
             </small>
         </div>
 
-        <div class="flex flex-col gap-[28vh] md:gap-[38vh] order-3 self-start max-w-md md:mt-[18vh]">
-            {rightBlocks.map((block) => (
-                <article data-about-block>
-                    <h4 class="font-anton uppercase text-sm md:text-xl mb-4">{block.label}</h4>
-                    <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
-                </article>
-            ))}
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-x-8 items-start md:-mt-55 lg:-mt-65">
+            <div class="flex flex-col gap-[10vh] md:gap-[28vh] order-2 md:order-1 self-start max-w-md">
+                {leftBlocks.map((block) => (
+                    <article>
+                        <h4 class="font-anton uppercase text-sm md:text-3xl mb-4">{block.label}</h4>
+                        <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
+                    </article>
+                ))}
+            </div>
+
+            <div class="hidden md:block order-2" aria-hidden="true"></div>
+
+            <div class="flex flex-col mt-10 gap-[10vh] md:gap-[28vh] order-3 self-start max-w-md md:mt-[18vh]">
+                {rightBlocks.map((block) => (
+                    <article data-about-block>
+                        <h4 class="font-anton uppercase text-sm md:text-3xl mb-4">{block.label}</h4>
+                        <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
+                    </article>
+                ))}
+            </div>
         </div>
+
+        <div class="h-45" aria-hidden="true"></div>
     </div>
 </section>
 

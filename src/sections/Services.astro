@@ -25,7 +25,7 @@ const services = [
         ],
         imageExample: mastercredLanding,
         z: 'z-10',
-        bg: 'bg-gray-100 dark:bg-neutral-950',
+        bg: 'dark:bg-neutral-950',
     },
 
     {
@@ -46,7 +46,7 @@ const services = [
 
         ],
         z: 'z-20',
-        bg: 'bg-white dark:bg-neutral-950',
+        bg: 'bg-gray-100 dark:bg-neutral-900',
         url: 'https://www.mastercred.com',
         imageExample: mastercredLanding,
     },
@@ -65,7 +65,7 @@ const services = [
         ],
         imageExample: mastercredLanding,
         z: 'z-30',
-        bg: 'bg-gray-100 dark:bg-neutral-900',
+        bg: 'bg-white dark:bg-neutral-950',
     }
 ]
 ---
@@ -106,7 +106,7 @@ const services = [
 
                         {/* Texto de Explorar en PC */}
                         <div class=" hidden absolute inset-0 items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100 md:flex">
-                            <span class="relative flex items-center gap-2 rounded-lg border border-white/20 bg-black px-5 py-3 font-anton text-2xl uppercase text-white shadow-xl shadow-black/30 transition-all duration-300 ">
+                            <span class="relative flex items-center gap-2 rounded-md border border-white/20 bg-black px-5 py-3 font-anton text-2xl uppercase text-white shadow-xl shadow-black/30 transition-all duration-300 ">
                                 <ArrowService class="size-8 rotate-45" />
                                 <span>Explorar proyecto</span>
                             </span>
@@ -142,15 +142,6 @@ const services = [
             </div>
         </article>
     ))}
-    <div class="
-    pointer-events-none
-    absolute bottom-0 left-0 w-full h-32
-    bg-linear-to-b
-    from-transparent
-    to-white
-    dark:to-[#0d0f12]
-    z-40
-  "></div>
 </section>
 
 <script src="../scripts/Services.js"></script>

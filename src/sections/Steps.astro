@@ -1,0 +1,55 @@
+---
+const navSteps = [
+    {
+        step: '01',
+        stepLabel: 'Paso 01',
+        stepTitle: 'Estructura',
+    },
+    {
+        step: '02',
+        stepLabel: 'Paso 02',
+        stepTitle: 'Diseño',
+    },
+    {
+        step: '03',
+        stepLabel: 'Paso 03',
+        stepTitle: 'Desarrollo',
+    },
+    {
+        step: '04',
+        stepLabel: 'Paso 04',
+        stepTitle: 'Lanzamiento',
+    },
+]
+---
+
+
+<section class="py-10 px-3">
+    <h2 class="font-anton uppercase text-4xl text-center px-3 py-10">
+        Proceso de trabajo
+    </h2>
+    <div class="border border-neutral-200/50 bg-neutral-50 md:flex rounded-md p-4 max-w-425 mx-auto justify-between gap-x-10 items-center">
+        <ol class="flex flex-row justify-between md:justify-start md:flex-1 gap-x-10">
+            {navSteps.map((step) => (
+                <li aria-current="step" class="flex flex-col md:flex-row items-center md:gap-x-7 ">
+                    <span class="border border-neutral-300 text-black/30 p-2 rounded-full items-center justify-center font-anton">{step.step}</span>
+                    <div class="flex flex-col text-black/30 font-grotesk ">
+                    <span class="hidden md:block">{step.stepLabel}</span>
+                    <span class="hidden md:block">{step.stepTitle}</span>
+                    </div>
+                </li>
+            ))}
+        </ol>
+        <div class="flex flex-row items-center mt-5 md:mt-0 gap-x-5 md:flex-1 font-grotesk">
+            <label class="shrink-0 text-sm md:text-base opacity-50">Progreso</label>
+            <div class="w-full h-1.5 rounded-full bg-neutral-200 relative">
+                <div class="absolute top-0 left-0 h-full bg-blue-600 dark:bg-blue-400 rounded-full" style="width: 25%;"></div>
+            </div>
+            <span class="text-sm md:text-base font-light">25%</span>
+        </div>
+    </div>
+    <div></div>
+</section>
+<script> 
+        import '../scripts/Process.js';
+</script>

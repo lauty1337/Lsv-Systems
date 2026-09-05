@@ -16,11 +16,10 @@ import { gsap } from 'gsap';
 
         gsap.to(contadorObj, {
             num: 1,
-            duration: 20,
             scrollTrigger: {
                 trigger: section,
                 start: 'top top',
-                end: 'bottom bottom',
+                end: 'bottom 50%',
                 scrub: 1,
             },
             onUpdate: () => {
@@ -28,3 +27,4 @@ import { gsap } from 'gsap';
             },
         });
     });
+    
