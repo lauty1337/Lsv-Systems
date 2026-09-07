@@ -96,7 +96,7 @@ const steps = [
                     
                     <!--Boton en Mobile -->
                     <span class="flex items-center gap-x-2 font-grotesk text-black/50 md:hidden">
-                        <PulseDot color="blue-600" />
+                        <PulseDot data-pulse color="blue-600" />
                         <span class="text-sm">Paso {step.step} — {step.stepLabel}</span>
                     </span>
                     <span class="font-anton text-xl flex tracking-wider uppercase md:hidden"> {step.stepTitle}</span>
@@ -104,12 +104,12 @@ const steps = [
                         <span class="text-xs font-grotesk text-black/70">{label}</span>
                     ))}</span>
                     <div class="overflow-hidden md:hidden h-0 w-full" data-panel-wrapper >
-                        <span role="tabpanel" class="flex flex-col text-start">
-                            <span class=" text-black/70 font-grotesk">{step.stepDescription}</span>
+                        <span role="tabpanel" class="flex flex-col text-start font-grotesk">
+                            <span class=" text-black/70">{step.stepDescription}</span>
                             <span class="flex flex-col mt-6">
-                                <span class="text-sm font-grotesk uppercase tracking-wider ">Fases de la entrega:</span>
-                                <span class="text-sm font-grotesk flex flex-col gap-y-1 mt-2 text-black/70">{step.stepDeliverables.map((deliverable) => (
-                                    <span class=""> - {deliverable}</span>
+                                <span class="text-sm uppercase tracking-wider">Fases de la entrega:</span>
+                                <span class="text-sm flex flex-col gap-y-1 mt-2 text-black/70">{step.stepDeliverables.map((deliverable) => (
+                                    <span> - {deliverable}</span>
                                 ))}</span>
                             </span>
                         </span>

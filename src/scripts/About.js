@@ -8,12 +8,7 @@ import { gsap } from 'gsap';
         const section = document.querySelector('#about');
         if (!contador || !section) return;
 
-        ScrollTrigger.getAll().forEach((st) => {
-            if (st.trigger === section) st.kill();
-        });
-
         const contadorObj = { num: 99 };
-
         gsap.to(contadorObj, {
             num: 1,
             scrollTrigger: {
@@ -26,5 +21,16 @@ import { gsap } from 'gsap';
                 contador.textContent = String(Math.round(contadorObj.num));
             },
         });
+        const blocks = document.querySelectorAll('[data-about-block]')
+
+        blocks.forEach(block => {
+            gsap.fromTo(block, {opacity: 0, y: 100}, {
+                opacity: 1, y: 0, duration: 1, ease: 'power2.inOut', scrollTrigger: {
+                    trigger: block,
+                    start: 'top 80%',
+                    end: 'bottom 30%',
+                }
+            })
+        })
     });
     

@@ -36,9 +36,9 @@ const rightBlocks = [
         <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-x-8 items-start md:-mt-55 lg:-mt-65">
             <div class="flex flex-col gap-[10vh] md:gap-[28vh] order-2 md:order-1 self-start max-w-md">
                 {leftBlocks.map((block) => (
-                    <article>
-                        <h4 class="font-anton uppercase text-sm md:text-3xl mb-4">{block.label}</h4>
-                        <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
+                    <article data-about-block>
+                        <h4 data-about-label class="font-anton uppercase text-sm md:text-3xl mb-4">{block.label}</h4>
+                        <p  data-about-text class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
                     </article>
                 ))}
             </div>
@@ -48,8 +48,8 @@ const rightBlocks = [
             <div class="flex flex-col mt-10 gap-[10vh] md:gap-[28vh] order-3 self-start max-w-md md:mt-[18vh]">
                 {rightBlocks.map((block) => (
                     <article data-about-block>
-                        <h4 class="font-anton uppercase text-sm md:text-3xl mb-4">{block.label}</h4>
-                        <p class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
+                        <h4  class="font-anton uppercase text-sm md:text-3xl mb-4">{block.label}</h4>
+                        <p  class="font-grotesk font-medium text-sm md:text-base leading-relaxed">{block.text}</p>
                     </article>
                 ))}
             </div>
