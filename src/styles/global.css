@@ -44,7 +44,6 @@
     --font-grotesk: 'Space Grotesk', sans-serif;
 }
 
-
 .nav-link {
   @apply inline-block hover:opacity-70 pl-4 pr-8 tracking-tighter font-anton uppercase dark:text-black text-white transition-all duration-300 hover:translate-x-4;
 }
@@ -52,7 +51,12 @@
   @apply w-5 h-0.5 dark:bg-white block bg-black/60
 }
 
-
+@layer utilities {
+  .dots-bg {
+    background-image: radial-gradient(circle, #00000015 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   ::view-transition-old(root),

@@ -1,4 +1,6 @@
 ---
+import PulseDot from '../components/PulseDot.astro';
+
 const navSteps = [
     {
         step: '01',
@@ -21,10 +23,48 @@ const navSteps = [
         stepTitle: 'Lanzamiento',
     },
 ]
+const steps = [
+    {
+        step: '01',
+        stepTitle: 'Estructura',
+        stepLabel: 'Estructura y diagnostico',
+        StepLabels: [
+            'Diagnostico,',
+            'Plan de trabajo,',
+            'Cotizacion',
+        ],
+        stepDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+        stepImage: 'https://via.placeholder.com/150',
+        stepTime: '1 semana',
+        stepDeliverables: [
+            'Documento de diagnostico',
+            'Plan de trabajo',
+            'Cotizacion',
+        ]
+    },
+    {
+        step: '02',
+        stepTitle: 'Diseño',
+        stepLabel: 'Diseño y desarrollo',
+        StepLabels: [
+            'Diagnostico',
+            'Plan de trabajo',
+            'Cotizacion',
+        ],
+        stepDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+        stepImage: 'https://via.placeholder.com/150',
+        stepTime: '1 semana',
+        stepDeliverables: [
+            'Documento de diagnostico',
+            'Plan de trabajo',
+            'Cotizacion',
+        ]
+    },
+]
 ---
 
 
-<section class="py-10 px-3">
+<section class="py-5 px-3">
     <h2 class="font-anton uppercase text-4xl text-center px-3 py-10">
         Proceso de trabajo
     </h2>
@@ -48,8 +88,55 @@ const navSteps = [
             <span class="text-sm md:text-base font-light">25%</span>
         </div>
     </div>
-    <div></div>
+    <div role="tablist" class="gap-3  mx-auto mt-10 flex flex-col  md:flex-row md:max-w-425">
+        {steps.map((step) => (
+            <div class="grid md:h-140 overflow-hidden relative ">
+
+                <button role="tab" data-step-button aria-controls={`step-${step.step}`} class="cursor-pointer flex flex-col p-3 gap-y-3 dots-bg border border-neutral-200 ">
+                    
+                    <!--Boton en Mobile -->
+                    <span class="flex items-center gap-x-2 font-grotesk text-black/50 md:hidden">
+                        <PulseDot color="blue-600" />
+                        <span class="text-sm">Paso {step.step} — {step.stepLabel}</span>
+                    </span>
+                    <span class="font-anton text-xl flex tracking-wider uppercase md:hidden"> {step.stepTitle}</span>
+                    <span class="flex gap-1 flex-wrap -mt-2 md:hidden">{step.StepLabels.map((label) => (
+                        <span class="text-xs font-grotesk text-black/70">{label}</span>
+                    ))}</span>
+                    <div class="overflow-hidden md:hidden h-0 w-full" data-panel-wrapper >
+                        <span role="tabpanel" class="flex flex-col text-start">
+                            <span class=" text-black/70 font-grotesk">{step.stepDescription}</span>
+                            <span class="flex flex-col mt-6">
+                                <span class="text-sm font-grotesk uppercase tracking-wider ">Fases de la entrega:</span>
+                                <span class="text-sm font-grotesk flex flex-col gap-y-1 mt-2 text-black/70">{step.stepDeliverables.map((deliverable) => (
+                                    <span class=""> - {deliverable}</span>
+                                ))}</span>
+                            </span>
+                        </span>
+                    </div>
+                    <span class="flex justify-between items-center font-grotesk md:hidden">
+                        <span class="text-sm text-black/50">Paso {step.step}/04</span>
+                        <span class="text-xl" data-icon>↓</span>
+                    </span>
+
+                    <!--Boton en Desktop -->
+                    <span class="hidden md:flex justify-between items-center flex-col h-full">
+                        <span class="font-anton text-2xl tracking-wider"> {step.step}</span>
+                        <span class="[writing-mode:vertical-lr] text-sm text-black/50 font-grotesk uppercase tracking-wider"> {step.stepLabel}</span>
+                        <span class="text-xl">+</span>
+                    </span>
+                    <div class="hidden md:block w-0 overflow-hidden " data-panel>
+                        <div class=" inset-0">
+                            <div class="flex flex-col p-3 gap-y-3  ">
+                                {step.step} lor Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, necessitatibus! Sapiente sequi, maiores officiis assumenda omnis officia consequuntur. Vel nihil tempora, alias sapiente officia porro ut fugit. Ex, aperiam nostrum.
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        ))}
+    </div>
 </section>
 <script> 
-        import '../scripts/Process.js';
+        import '../scripts/Steps.js';
 </script>

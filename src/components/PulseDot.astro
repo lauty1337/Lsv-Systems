@@ -1,0 +1,8 @@
+---
+const { color } = Astro.props;
+---
+
+<span class="relative size-2">
+    <span class={`absolute inset-0 bg-${color} rounded-full animate-ping duration-1000`}></span>
+    <span class={`absolute inset-0 bg-${color} rounded-full opacity-75 duration-1000`}></span>
+</span> 
