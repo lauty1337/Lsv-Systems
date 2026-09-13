@@ -28,38 +28,70 @@ const steps = [
         step: '01',
         stepTitle: 'Estructura',
         stepLabel: 'Estructura y diagnostico',
-        StepLabels: [
-            'Diagnostico,',
-            'Plan de trabajo,',
-            'Cotizacion',
+        stepLabels: [
+            '#Briefing',
+            '#Diagnostico',
+            '#Plan de trabajo',
         ],
-        stepDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+        stepDescription: 'Primero lo primero: quiero entender bien tu negocio, a quién le vendes y qué necesitas lograr exacto. Nos sentamos a revisar tus ideas, resolvemos dudas iniciales y definimos la hoja de ruta para que ambos sepamos hacia dónde vamos desde el día uno.',
         stepImage: 'https://via.placeholder.com/150',
-        stepTime: '1 semana',
         stepDeliverables: [
-            'Documento de diagnostico',
-            'Plan de trabajo',
+            'Documento de Briefing',
+            'Cronograma de trabajo',
             'Cotizacion',
         ]
     },
     {
         step: '02',
         stepTitle: 'Diseño',
-        stepLabel: 'Diseño y desarrollo',
-        StepLabels: [
-            'Diagnostico',
-            'Plan de trabajo',
-            'Cotizacion',
+        stepLabel: 'Forma visual',
+        stepLabels: [
+            '#Diseño',
+            '#UX/UI',
+            '#Prototipo',
         ],
-        stepDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+        stepDescription: 'Aquí es donde la idea cobra vida. Diseñamos la estructura y la apariencia de tu proyecto para que veas cómo va a interactuar tu cliente antes de programar nada. Ajustamos los detalles visuales juntos hasta que quedes 100% conforme.',
         stepImage: 'https://via.placeholder.com/150',
-        stepTime: '1 semana',
         stepDeliverables: [
-            'Documento de diagnostico',
-            'Plan de trabajo',
-            'Cotizacion',
+            'Proyecto en Figma',
+            'Mockups',
         ]
     },
+    {
+        step: '03',
+        stepTitle: 'Desarrollo',
+        stepLabel: 'Programacion y desarrollo',
+        stepLabels: [
+            '#Programacion',
+            '#Codigo',
+            '#Dev',
+        ],
+        stepDescription: 'Ya con el diseño aprobado, me pongo a construir. Escribo código limpio, rápido y seguro, conectando todas las herramientas que tu proyecto necesita para funcionar sin fallas ni sorpresas.',
+        stepImage: 'https://via.placeholder.com/150',
+        stepDeliverables: [
+            'Codigo fuente',
+            'Testing',
+            'Enlace privado',
+        ]
+    },
+    {
+        step: '04',
+        stepTitle: 'Lanzamiento',
+        stepLabel: 'Presentacion y lanzamiento',
+        stepLabels: [
+            '#QA',
+            '#Lanzamiento',
+            '#Entrega',
+        ],
+        stepDescription: 'Hacemos las últimas pruebas para asegurarnos de que todo cargue rápido y vuele. Publicamos el proyecto, te entrego todos los accesos y te enseño a gestionarlo para que tengas el control total desde el primer segundo.',
+        stepImage: 'https://via.placeholder.com/150',
+        stepDeliverables: [
+            'Enlace publico',
+            'Accesos',
+            'Codigo 100% propio',
+        ]
+    }
+
 ]
 ---
 
@@ -71,44 +103,44 @@ const steps = [
     <div class="border border-neutral-200/50 bg-neutral-50 md:flex rounded-md p-4 max-w-425 mx-auto justify-between gap-x-10 items-center">
         <ol class="flex flex-row justify-between md:justify-start md:flex-1 gap-x-10">
             {navSteps.map((step) => (
-                <li aria-current="step" class="flex flex-col md:flex-row items-center md:gap-x-7 ">
-                    <span class="border border-neutral-300 text-black/30 p-2 rounded-full items-center justify-center font-anton">{step.step}</span>
-                    <div class="flex flex-col text-black/30 font-grotesk ">
-                    <span class="hidden md:block">{step.stepLabel}</span>
+                <li data-step-nav class="group flex flex-col md:flex-row items-center md:gap-x-7 opacity-50 aria-[current=step]:opacity-100 transition-opacity duration-300">
+                    <span class="border border-neutral-300 text-gray-600 p-2 rounded-full items-center justify-center font-anton transition-colors duration-300 group-aria-[current=step]:border-blue-600 group-aria-[current=step]:text-blue-600">{step.step}</span>
+                    <div class="flex flex-col text-black/30 font-grotesk transition-colors duration-300 group-aria-[current=step]:text-black">
+                    <span class="hidden md:block group-aria-[current=step]:font-bold">{step.stepLabel}</span>
                     <span class="hidden md:block">{step.stepTitle}</span>
                     </div>
                 </li>
             ))}
         </ol>
         <div class="flex flex-row items-center mt-5 md:mt-0 gap-x-5 md:flex-1 font-grotesk">
-            <label class="shrink-0 text-sm md:text-base opacity-50">Progreso</label>
+            <label class="shrink-0 text-sm md:text-base uppercase tracking-widest opacity-50">Progreso</label>
             <div class="w-full h-1.5 rounded-full bg-neutral-200 relative">
-                <div class="absolute top-0 left-0 h-full bg-blue-600 dark:bg-blue-400 rounded-full" style="width: 25%;"></div>
+                <div data-progress-bar class="absolute top-0 left-0 h-full bg-blue-600 dark:bg-blue-400 rounded-full" style="width: 0%;"></div>
             </div>
-            <span class="text-sm md:text-base font-light">25%</span>
+            <span data-progress-label class="text-sm md:text-base font-light">0%</span>
         </div>
     </div>
-    <div role="tablist" class="gap-3  mx-auto mt-10 flex flex-col  md:flex-row md:max-w-425">
-        {steps.map((step) => (
-            <div class="grid md:h-140 overflow-hidden relative ">
+    <div role="tablist" class="gap-3 mx-auto mt-10 flex flex-col md:grid md:perspective-distant md:grid-cols-4  max-w-425">
+        {steps.map((step, index) => (
+            <div class="grid w-full md:h-140 md:overflow-hidden relative ">
 
-                <button role="tab" data-step-button aria-controls={`step-${step.step}`} class="cursor-pointer flex flex-col p-3 gap-y-3 dots-bg border border-neutral-200 ">
+                <button role="tab" data-step-button data-step-index={index} aria-controls={`step-${step.step}`} class="cursor-pointer flex flex-col p-3 gap-y-3 dots-bg border border-neutral-200 md:relative md:rounded-md md:grid md:transform-3d">
                     
                     <!--Boton en Mobile -->
-                    <span class="flex items-center gap-x-2 font-grotesk text-black/50 md:hidden">
+                    <span class="flex items-center gap-x-2 font-grotesk text-gray-600 md:hidden">
                         <PulseDot data-pulse color="blue-600" />
                         <span class="text-sm">Paso {step.step} — {step.stepLabel}</span>
                     </span>
                     <span class="font-anton text-xl flex tracking-wider uppercase md:hidden"> {step.stepTitle}</span>
-                    <span class="flex gap-1 flex-wrap -mt-2 md:hidden">{step.StepLabels.map((label) => (
-                        <span class="text-xs font-grotesk text-black/70">{label}</span>
+                    <span class="flex gap-1 flex-wrap -mt-2 md:hidden">{step.stepLabels.map((label) => (
+                        <span class="text-xs font-grotesk text-gray-600">{label}</span>
                     ))}</span>
                     <div class="overflow-hidden md:hidden h-0 w-full" data-panel-wrapper >
                         <span role="tabpanel" class="flex flex-col text-start font-grotesk">
-                            <span class=" text-black/70">{step.stepDescription}</span>
+                            <span class=" text-gray-600">{step.stepDescription}</span>
                             <span class="flex flex-col mt-6">
                                 <span class="text-sm uppercase tracking-wider">Fases de la entrega:</span>
-                                <span class="text-sm flex flex-col gap-y-1 mt-2 text-black/70">{step.stepDeliverables.map((deliverable) => (
+                                <span class="text-sm flex flex-col gap-y-1 mt-2 text-gray-600">{step.stepDeliverables.map((deliverable) => (
                                     <span> - {deliverable}</span>
                                 ))}</span>
                             </span>
@@ -120,16 +152,44 @@ const steps = [
                     </span>
 
                     <!--Boton en Desktop -->
-                    <span class="hidden md:flex justify-between items-center flex-col h-full">
-                        <span class="font-anton text-2xl tracking-wider"> {step.step}</span>
-                        <span class="[writing-mode:vertical-lr] text-sm text-black/50 font-grotesk uppercase tracking-wider"> {step.stepLabel}</span>
-                        <span class="text-xl">+</span>
+                    <span data-panel-button class="hidden md:flex justify-between items-center flex-col h-full md:absolute md:inset-0 md:backface-hidden">
+                        <span class="font-grotesk font-bold text-3xl mt-10 tracking-wider"> {step.step}</span>
+                        <span class="[writing-mode:vertical-lr] text-md text-black/50 font-grotesk uppercase tracking-wider"> {step.stepLabel}</span>
+                        <span class="text-xl mb-10">+</span>
                     </span>
-                    <div class="hidden md:block w-0 overflow-hidden " data-panel>
-                        <div class=" inset-0">
-                            <div class="flex flex-col p-3 gap-y-3  ">
-                                {step.step} lor Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, necessitatibus! Sapiente sequi, maiores officiis assumenda omnis officia consequuntur. Vel nihil tempora, alias sapiente officia porro ut fugit. Ex, aperiam nostrum.
-                            </div>
+                    <div data-panel-desktop class="hidden md:block overflow-hidden md:absolute md:inset-0 md:p-10 md:backface-hidden md:rotate-y-180">
+                        <div class="flex flex-col items-start font-grotesk">
+                            <span class="absolute top-0 right-0">
+                                <span class="text-8xl text-gray-600/10 font-anton uppercase tracking-wider"> 
+                                    {step.step}
+                                </span>
+                            </span>
+                            <span class="flex flex-row items-center gap-x-2  text-gray-600">
+                                <PulseDot class="size-10" color="blue-600"/>
+                                <span>
+                                    Paso {step.step} — {step.stepLabel}
+                                </span>
+                            </span>
+
+                            <span class="font-anton mt-2 text-3xl uppercase tracking-wider"> 
+                                {step.stepTitle}
+                            </span>
+                            <span class="flex flex-row gap-x-2">
+                                {step.stepLabels.map((label) => (
+                                    <span class="text-xs text-gray-600">{label}</span>
+                                ))}
+                            </span>
+                            <span class="text-start text-balance mt-15 text-gray-800">
+                                {step.stepDescription}
+                            </span>
+                            <span class="text-sm uppercase tracking-wider mt-10">
+                                Fases de la entrega:
+                            </span>
+                            <span class="text-sm flex flex-col items-start gap-y-1 mt-2 text-gray-600">
+                                {step.stepDeliverables.map((deliverable) => (
+                                    <span> - {deliverable}</span>
+                                ))}
+                            </span>
                         </div>
                     </div>
                 </button>

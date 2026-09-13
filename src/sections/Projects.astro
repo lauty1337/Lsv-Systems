@@ -6,7 +6,7 @@ import ArrowService from '../assets/svgs/ArrowService.svg';
 
 const projects = await getCollection('projects');
 ---
-<section id="projects" class="bg-white min-h-screen py-10 dark:bg-neutral-950">
+<section id="projects" class="min-h-screen py-10 ">
     <div class="mb-30 px-3">
         <div class="flex justify-between items-center text-lg md:text-3xl">
             <span class="font-anton uppercase translate-y-6 md:translate-y-15">Ultimos</span>
@@ -28,7 +28,7 @@ const projects = await getCollection('projects');
                         <span>Explorar</span>
                     </p>
                 </div>
-                <Image src={entry.data.img} alt={entry.data.title} transition:name={`project-${entry.id}-hero`} class="w-full h-70 md:h-100" />
+                <Image src={entry.data.img} alt={entry.data.title} transition:name={`project-${entry.id}-hero`} class="w-full aspect-square h-70 md:h-100" />
                 <div class="grid grid-cols-1 md:grid-cols-2 pt-4 pb-8 gap-4 px-2">
                     <h3 class="font-anton uppercase text-5xl ">
                         {entry.data.title}
@@ -38,10 +38,10 @@ const projects = await getCollection('projects');
                             {entry.data.tags.join(', ')}
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-2 overflow-hidden">
-                            <p class="font-light md:group-hover:-translate-y-20 transition-transform duration-200">
+                            <p class="font-light md:group-hover:-translate-y-20 transition-transform duration-400">
                                 {entry.data.year}
                             </p>
-                            <p aria-hidden="true" class="font-anton hidden md:block text-right md:translate-y-40 md:group-hover:translate-y-0 transition-transform duration-200 ">
+                            <p aria-hidden="true" class="font-anton hidden md:block text-right md:translate-y-40 md:group-hover:translate-y-0 transition-transform duration-400 ">
                                 {entry.data.year}
                             </p>
                         </div>

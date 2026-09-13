@@ -1,8 +1,15 @@
 ---
 const { color } = Astro.props;
+const colors = {
+    'green-600': 'bg-green-600',
+    'yellow-600': 'bg-yellow-600',
+    'red-600': 'bg-red-600',
+    'blue-600': 'bg-blue-600',
+    'emerald-600': 'bg-emerald-600',
+}
 ---
 
-<span class="relative size-2">
-    <span class={`absolute inset-0 bg-${color} rounded-full animate-ping duration-1000`}></span>
-    <span class={`absolute inset-0 bg-${color} rounded-full opacity-75 duration-1000`}></span>
+<span class="relative size-2" >
+    <span class={`absolute inset-0 ${colors[color as keyof typeof colors]} rounded-full animate-ping duration-1000`}></span>
+    <span class={`absolute inset-0 ${colors[color as keyof typeof colors]} rounded-full opacity-75 duration-1000`}></span>
 </span> 

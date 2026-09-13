@@ -10,7 +10,7 @@ import { gsap } from 'gsap';
 
         const contadorObj = { num: 99 };
         gsap.to(contadorObj, {
-            num: 1,
+        num: 1,
             scrollTrigger: {
                 trigger: section,
                 start: 'top top',
@@ -27,10 +27,9 @@ import { gsap } from 'gsap';
             gsap.fromTo(block, {opacity: 0, y: 100}, {
                 opacity: 1, y: 0, duration: 1, ease: 'power2.inOut', scrollTrigger: {
                     trigger: block,
-                    start: 'top 80%',
+                    start: 'top 70%',
                     end: 'bottom 30%',
                 }
             })
         })
     });
-    

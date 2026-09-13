@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-
+import ArrowService from '../../assets/svgs/ArrowService.svg';
 export async function getStaticPaths() {
     const projects = await getCollection('projects');
 
@@ -21,6 +21,8 @@ const { title, titleSEO, description, year, tags, imgHero, url } = entry.data;
         <article class="relative overflow-hidden">
             
             <Image src={imgHero} transition:name={`project-${entry.id}-hero`} alt={title} class="blur-xs w-full h-screen" />
-            
+                <a href="">
+                    <ArrowService class="size-25" />
+                </a>
         </article>
 </Layout>
