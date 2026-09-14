@@ -9,11 +9,15 @@ const projects = await getCollection('projects');
 <section id="projects" class="min-h-screen py-10 ">
     <div class="mb-30 px-3">
         <div class="flex justify-between items-center text-lg md:text-3xl">
-            <span class="font-anton uppercase translate-y-6 md:translate-y-15">Ultimos</span>
-            <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">Landings pages</span>
-            <span class="font-anton uppercase"> Proyectos </span>
-            <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">E-Commerces</span>
-            <span class="font-anton uppercase translate-y-6 md:translate-y-15">2026©</span>
+            <div class="flex-1 flex justify-between items-center">
+                <span class="font-anton uppercase translate-y-6 md:translate-y-15">Ultimos</span>
+                <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">Landings pages</span>
+            </div>
+            <h2 class="font-anton uppercase mx-40 px-4"> Proyectos </h2>
+            <div class="flex-1 flex justify-end md:justify-between items-center">
+                <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">E-Commerces</span>
+                <span class="font-anton uppercase translate-y-6 md:translate-y-15">2026©</span>
+            </div>
         </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 mx-auto max-w-xl md:max-w-425 px-3 gap-18 ">

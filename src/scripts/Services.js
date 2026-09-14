@@ -20,6 +20,7 @@ serviceCard.forEach((card) => {
             scrub: 1,
             start: 'top bottom',
             end: 'bottom top',
+            toggleActions: 'play none none none',
         }
     })
     tlService
