@@ -1,3 +1,11 @@
+---
+import Commerce from '../assets/svgs/Commerce.svg';
+import Company from '../assets/svgs/Company.svg';
+import Flag from '../assets/svgs/Flag.svg';
+import ArrowRight from '../assets/svgs/ArrowRight.svg';
+---
+
+
 <section id="contact" class="py-20 px-3">
     <div class="mb-30 px-3">
         <div class="flex justify-between items-center text-lg md:text-3xl">
@@ -13,45 +21,114 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 max-w-425 mx-auto gap-y-15 md:gap-5">
         
-        <form action="" method="POST" class="flex flex-col border font-grotesk border-neutral-200 p-5">
+        <form action="" method="POST" class="flex flex-col border font-grotesk border-neutral-200 p-5 row-span-2">
             <small class="text-gray-600 font-grotesk uppercase mb-2">01 — Formulario</small>
-            <h3 class="font-anton uppercase text-3xl pb-10 border-b border-neutral-200 leading-7.5">Especificaciones <br> iniciales</h3>
+            <h3 class="font-anton uppercase text-3xl pb-3 border-b border-neutral-200 md:text-4xl">Especificaciones  iniciales</h3>
             
-            <label class="font-medium uppercase mt-10 mb-2">Tu nombre o empresa *</label>
+            <label class="font-medium uppercase mt-5 mb-2 md:text-xl">Tu nombre o empresa *</label>
             <input type="text" name="name" placeholder="Ej. Juan Perez - Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 bg-gray-100 p-3 transition-colors " />
 
-            <fieldset class="flex flex-col gap-y-2 mt-10">
-                <legend class="font-medium uppercase mb-2">Tipo de proyecto *</legend>
+            <fieldset class="flex flex-col gap-2 mt-10 md:grid md:grid-cols-2">
+                <legend class="font-medium uppercase mb-2 md:text-xl">Tipo de proyecto *</legend>
 
-                <label>
-                    <input type="radio" name="project-type" value="landing-page" /> 
-                    <span>Landing page </span>
+                <label class="bg-gray-100 flex items-center cursor-pointer gap-x-1 border-neutral-200 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 md:text-lg">
+                    <Flag class="size-5 text-black " />
+                    <input type="radio" name="project-type" value="landing-page" class="appearance-none" /> 
+                    <span class="font-medium">Landing page </span>
                 </label>
 
-                <label>
-                    <input type="radio" name="project-type" value="web-institucional" />
-                    <span> Web Institucional</span>
+                <label class="bg-gray-100 flex items-center cursor-pointer gap-x-1 border-neutral-200 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 md:text-lg">
+                    <Company class="size-5 text-black " />
+                    <input type="radio" name="project-type" value="web-institucional" class="appearance-none" />
+                    <span class="font-medium"> Web Institucional</span>
                 </label>
 
-                <label>
-                    <input type="radio" name="project-type" value="ecommerce" />
-                    <span>E-commerce <small>(WooCommerce)</small></span>
+                <label class="bg-gray-100 flex items-center cursor-pointer gap-x-1 border-neutral-200 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 md:text-lg">
+                    <Commerce class="size-5 text-black  " />
+                    <input type="radio" name="project-type" value="ecommerce" class="appearance-none" />
+                    <span class="font-medium">E-commerce <small>(WooCommerce)</small></span>
                 </label>
             </fieldset>
-            <label class="mt-10 flex mb-2 leading-4">
+
+            <label class="mt-10 flex mb-2 md:justify-between md:text-xl">
                 <span class="font-medium  uppercase">Contacto directo <br>(WhatsApp o email) *</span>
-                <small class="text-xs text-balance text-gray-600 ">Respondemos por ahi</small>
+                <small class="text-xs md:text-base text-balance text-gray-600 ">Respondemos por ahi</small>
             </label>
             <input type="text" name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" class="border border-neutral-200 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 p-3" />
 
-            <label class="mt-10 font-medium uppercase mb-2">Contexto del proyecto <br> <small class="text-gray-600">(Opcional)</small> </label>
-            <textarea name="context" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 bg-gray-100 p-3 transition-colors resize-none h-20"></textarea>
+            <label class="mt-10 font-medium uppercase mb-2 md:text-xl">Contexto del proyecto <br> <small class="text-gray-600">(Opcional)</small> </label>
+            <textarea name="context" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 bg-gray-100 p-3 transition-colors resize-none h-25"></textarea>
 
-            <button type="submit" class="mt-10 bg-black text-white font-medium uppercase p-4 hover:cursor-pointer leading-4 text-balance hover:bg-neutral-700 transition-colors duration-300">
+            <button type="submit" class="mt-10 bg-black text-white font-medium uppercase p-4 leading-4 text-balance hover:cursor-pointer hover:bg-neutral-700 active:scale-95 transition-all duration-300 md:text-xl">
                 Solicitar presupuesto & diagnostico
             </button>
         </form>
+
+        <div class="flex flex-col font-grotesk bg-gray-100 border border-neutral-300 p-5">
+            <h3 class="font-anton uppercase text-3xl text-balance md:text-4xl">
+                Contacto directo a Lsv Systems ©
+            </h3>
+            <p class="text-gray-600 text-balance mt-3">
+                Si preferis coordinar una llamada o una consulta sin rellenar formularios.
+            </p>
+                <a href="tel:5491133333333" target="_blank" rel="noopener noreferrer" class="mt-5 p-4 bg-blue-600 text-white flex items-center justify-between group hover:bg-blue-500 transition-colors duration-200">
+                    <span class="flex flex-col md:text-lg">
+                        <span class="font-medium uppercase">Chatear por whatsapp</span>
+                        <small class="font-light">Poco tiempo de espera</small>
+                    </span>
+                    <ArrowRight class="size-7  group-hover:translate-x-2 transition-transform duration-200 " />
+                </a>
+                <a href="mailto:info@lsvsystems.com" target="_blank" rel="noopener noreferrer" class="mt-2 text-balance text-gray-600 flex items-center justify-between p-4 bg-white border border-neutral-200 hover:bg-neutral-200 hover:border-neutral-300 md:text-lg transition-colors duration-200 group">
+                O agenda directa en Google Meet / Calendly
+                    <ArrowRight class="size-7 group-hover:translate-x-2 transition-transform duration-200 " />
+                </a>
+        </div>
+
+        <div class="p-5 border border-neutral-200 border-l-blue-600 border-l-6">
+            <div class="flex justify-between border-b pb-4 border-neutral-200">
+                <h3 class="font-anton uppercase text-3xl text-balance md:text-4xl">
+                    Métricas & resultados
+                </h3>
+                <span class="font-grotesk uppercase text-xs font-light text-gray-600">
+                    Lsv Systems ©
+                </span>
+            </div>
+            <div class="grid grid-cols-2 gap-5 mt-5">
+                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 gap-y-3">
+                    <h4 class="font-anton text-3xl">
+                        + 20 
+                    </h4>
+                    <p class="text-gray-600 text-balance font-grotesk ">
+                        Proyectos realizados
+                    </p>
+                </div>
+                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5">
+                    <h4 class="font-anton text-3xl text-blue-600">
+                        99.9%
+                    </h4>
+                    <p class="text-gray-600 text-balance font-grotesk">
+                        Uptime & Performance 95+
+                    </p>
+                </div>
+                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 gap-y-3">
+                    <h4 class="font-anton uppercase text-3xl">
+                        30 min
+                    </h4>
+                    <p class="text-gray-600 text-balance font-grotesk">
+                        Tiempo de respuesta promedio
+                    </p>
+                </div>
+                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 gap-y-3">
+                    <h4 class="font-anton uppercase text-3xl">
+                        1:1
+                    </h4>
+                    <p class="text-gray-600 text-balance font-grotesk">
+                        Trato directo sin intermediarios
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
