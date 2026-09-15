@@ -25,10 +25,11 @@ import { gsap } from 'gsap';
 
         blocks.forEach(block => {
             gsap.fromTo(block, {opacity: 0, y: 100}, {
-                opacity: 1, y: 0, duration: 1, ease: 'power2.inOut', scrollTrigger: {
+                opacity: 1, y: 0,  ease: 'power2.inOut', scrollTrigger: {
                     trigger: block,
-                    start: 'top 70%',
+                    start: 'top 90%',
                     end: 'bottom 30%',
+                    scrub: 1,
                 }
             })
         })
