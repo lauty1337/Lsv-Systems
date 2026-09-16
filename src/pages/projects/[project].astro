@@ -2,7 +2,8 @@
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-import ArrowService from '../../assets/svgs/ArrowService.svg';
+import  PulseDot  from '../../components/PulseDot.astro';
+import ArrowRight from '../../assets/svgs/ArrowRight.svg'
 export async function getStaticPaths() {
     const projects = await getCollection('projects');
 
@@ -14,15 +15,67 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, titleSEO, description, year, tags, imgHero, url } = entry.data;
+const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, time, tags, url } = entry.data;
 ---
 
-<Layout title={`${titleSEO}`} description={description}>
-        <article class="relative overflow-hidden">
-            
-            <Image src={imgHero} transition:name={`project-${entry.id}-hero`} alt={title} class="blur-xs w-full h-screen" />
-                <a href="">
-                    <ArrowService class="size-25" />
-                </a>
-        </article>
+<Layout title={`${titleSEO}`} description={descriptionSEO}>
+        <article class="py-10">
+
+            <header class="flex flex-col justify-center items-center gap-y-3 mb-30">
+                <div class="flex flex-col items-center font-grotesk font-medium text-xs uppercase gap-2 md:flex-row md:text-sm">
+                    <span class="py-1 px-4 bg-black dark:bg-white text-white dark:text-black flex items-center gap-x-2">
+                        <PulseDot color="green-600" />
+                        Estado: Activo
+                    </span>
+                    <div class="flex gap-x-2">
+                        <span class="py-1 px-4 text-blue-600 border border-blue-600 bg-blue-600/10"> Conversion 100%</span>
+                        <span class="py-1 px-4 border border-neutral-400 dark:border-neutral-600">Astro Build</span>
+                    </div>
+                </div>
+                <h1 class="font-anton uppercase tracking-tighter leading-none text-[88px] md:text-[320px] ">{title}</h1>
+                <p class="font-grotesk font-medium  uppercase text-gray-600 dark:text-gray-300 text-center text-md md:text-2xl ">{descriptionLabel}</p> 
+            </header>
+
+            <main class="grid grid-cols-1 gap-10 px-3 md:grid-cols-2 md:mx-auto md:max-w-425  ">
+                <div class="gap-y-5 flex flex-col font-grotesk">
+                    <span class="font-medium uppercase text-sm text-blue-600 md:text-base block">
+                        ( Especificaciones )
+                    </span>
+                    <h2 class="font-anton uppercase text-3xl md:text-5xl">
+                        {titleLabel}
+                    </h2>
+                    <p class="font-medium text-gray-600 dark:text-gray-300 text-md md:text-lg text-balance ">
+                        {descriptionSEO}
+                    </p>
+                    <dl class="border uppercase border-neutral-200 dark:border-neutral-700 divide-y divide-neutral-300/50 dark:divide-neutral-600/50 dots-bg">
+                        <div class="flex justify-between p-3">
+                            <dt class="text-gray-600 dark:text-gray-300">Cliente</dt>
+                            <dd class="font-medium">{title}</dd>
+                        </div>
+                        <div class="flex justify-between p-3">
+                            <dt class="text-gray-600 dark:text-gray-300">Plazo de entrega</dt>
+                            <dd class="font-medium text-blue-600">{time}</dd>
+                        </div>
+                        <div class="flex justify-between p-3">
+                            <dt class="text-gray-600 dark:text-gray-300">Performance</dt>
+                            <dd class="font-medium">100%</dd>
+                        </div>
+                        <div class="flex justify-between p-3">
+                            <dt class="text-gray-600 dark:text-gray-300">Stack Tecnológico</dt>
+                            <dd class="font-medium">
+                                <ul class="flex flex-row gap-x-2 gap-y-1">
+                                    <li>TailwindCSS </li>
+                                    <li>Astro.js</li>
+                                    <li>GSAP</li>
+                                </ul>
+                            </dd>
+                        </div>
+                    </dl>
+                    <a href={url} target="_blank" rel="noopener noreferrer" class="bg-black dark:bg-white text-white dark:text-black py-3 px-4 font-medium uppercase flex justify-center gap-x-2 md:w-1/2 hover:bg-neutral-700 dark:hover:bg-neutral-300 transition-all duration-200 group" >
+                        Visitar pagina web 
+                        <ArrowRight class="group-hover:translate-x-2 transition-all duration-200" />
+                    </a>
+                </div>
+            </main>
+        </article> 
 </Layout>
