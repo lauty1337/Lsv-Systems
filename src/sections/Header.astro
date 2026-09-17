@@ -6,6 +6,8 @@ import LogoSVG from '../assets/svgs/LogoSVG.svg'
 import ArrowRight from '../assets/svgs/ArrowRight.svg'
 import Moon from '../assets/svgs/Moon.svg'
 import Sun from '../assets/svgs/Sun.svg'
+
+const isProjectPage = Astro.url.pathname.startsWith('/projects/');
 ---
 
 <header class="sticky top-0 z-300 p-3 grid grid-cols-[1fr_auto_1fr] items-center transition-transform duration-300">
@@ -24,7 +26,7 @@ import Sun from '../assets/svgs/Sun.svg'
 
     <div class="relative justify-self-end w-24 h-11">
         <div class="absolute top-0 right-0 flex flex-col items-stretch">
-            <button data-nav-toggler aria-expanded="false" class="bg-black dark:bg-white noise p-1 flex items-center justify-start gap-1 group cursor-pointer h-11">
+            <button data-nav-toggler data-back-button={isProjectPage ? '' : undefined} aria-expanded="false" class="bg-black dark:bg-white noise p-1 flex items-center justify-start gap-1 group cursor-pointer h-11">
 
                 <div class="flex flex-col h-9 justify-between gap-0.5 px-2 py-3 bg-white dark:bg-black group-hover:py-2 transition-all duration-200">
                     <span aria-hidden="true" data-line-top class="bg-line"></span>
@@ -33,11 +35,12 @@ import Sun from '../assets/svgs/Sun.svg'
                 </div>
                 
                 <div class="relative inline-block overflow-hidden h-5 w-15 text-white dark:text-black font-anton uppercase px-0.5">
-                    <span data-label-menu class="absolute inset-0 flex items-center justify-center">Menu</span>
-                    <span data-label-close class="absolute inset-0 flex items-center justify-center translate-y-full">Cerrar</span>
+                    <span data-label-menu class="absolute inset-0 flex items-center justify-center">{isProjectPage ? 'Volver' : 'Menu'}</span>
+                    {!isProjectPage && <span data-label-close class="absolute inset-0 flex items-center justify-center translate-y-full">Cerrar</span>}
                 </div>
 
             </button>
+            {!isProjectPage && (
             <nav data-menu-header class="overflow-hidden border opacity-0 pt-3 invisible dark:bg-gray-200 bg-[#111111] dark:border-white border-black">
                 <ul class="gap-y-3 flex flex-col text-5xl">
 
@@ -52,7 +55,7 @@ import Sun from '../assets/svgs/Sun.svg'
                             <Image src={logo} alt="Logo de Mastercred" title="Logo de Mastercred" class="size-7 md:size-8" />
 
                             <span class="flex flex-col gap-0.5">
-                                <span class="text-xs font-grotesk dark:text-black/70 text-white/70">Ultimo Proyecto</span>
+                                <span class="text-xs dark:text-black/70 text-white/70">Ultimo Proyecto</span>
                                 <span class="text-sm font-anton text-white dark:text-black tracking-tighter uppercase ">MasterCred</span>
                             </span>
                             </div>
@@ -62,6 +65,7 @@ import Sun from '../assets/svgs/Sun.svg'
                     
                 </ul>   
             </nav>
+            )}
         </div>
     </div>
 </header>

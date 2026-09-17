@@ -14,6 +14,7 @@ const projects = defineCollection({
             url: z.string().url(),
             tags: z.array(z.string()),
             img: image(),
+            imgCaseStudy: image(),
             rotate: z.string(),
             mt: z.string(),
         }),

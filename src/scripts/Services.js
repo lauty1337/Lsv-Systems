@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener('astro:page-load', () => {
+
 
 const serviceCard = document.querySelectorAll('[data-service]');
 
@@ -33,5 +33,5 @@ serviceCard.forEach((card) => {
 
 
 
-});
+
 

@@ -7,16 +7,16 @@ import  PulseDot  from '../components/PulseDot.astro';
 ---
 
 
-<section id="contact" class="py-20 px-3">
+<section id="contact" class="py-20 px-3 md:scroll-mb-180">
     <div class="mb-30 px-3">
         <div class="flex justify-between items-center text-lg md:text-3xl">
             <div class="flex-1 flex justify-between items-center">
                 <span class="font-anton uppercase translate-y-6 md:translate-y-15">2026©</span>
-                <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">Email</span>
+                <span class="hidden md:block translate-y-4 font-light text-lg">Email</span>
             </div>
             <h2 class="font-anton uppercase mx-40 px-4"> Contacto </h2>
             <div class="flex-1 flex justify-end md:justify-between items-center">
-                <span class="hidden md:block translate-y-4 font-grotesk font-light text-lg">WhatsApp</span>
+                <span class="hidden md:block translate-y-4 font-light text-lg">WhatsApp</span>
                 <span class="font-anton uppercase translate-y-6 md:translate-y-15">LSV ©</span>
             </div>
         </div>
@@ -24,12 +24,12 @@ import  PulseDot  from '../components/PulseDot.astro';
 
     <div class="grid grid-cols-1 md:grid-cols-2 max-w-425 mx-auto gap-y-15 md:gap-5">
         
-        <form action="" method="POST" class="flex flex-col border font-grotesk border-neutral-200 p-5 row-span-2">
-            <small class="text-gray-600 font-grotesk uppercase mb-2">01 — Formulario</small>
+        <form action="" method="POST" class="flex flex-col border border-neutral-200 p-5 row-span-2">
+            <small class="text-gray-600 uppercase mb-2">01 — Formulario</small>
             <h3 class="font-anton uppercase text-3xl pb-3 border-b border-neutral-200 ">Especificaciones  iniciales</h3>
             
             <label class="font-medium uppercase mt-5 mb-2 ">Tu nombre o empresa *</label>
-            <input type="text" name="name" placeholder="Ej. Juan Perez - Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 bg-gray-100 p-3 transition-colors " />
+            <input type="text" name="name" placeholder="Ej. Juan Perez o Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 bg-gray-100 p-3 transition-colors " />
 
             <fieldset class="flex flex-col gap-2 mt-10 md:grid md:grid-cols-2">
                 <legend class="font-medium uppercase mb-2 ">Tipo de proyecto *</legend>
@@ -67,7 +67,7 @@ import  PulseDot  from '../components/PulseDot.astro';
             </button>
         </form>
 
-        <div class="flex flex-col font-grotesk bg-gray-100 border border-neutral-300 p-5">
+        <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 md:justify-between">
             <h3 class="font-anton uppercase text-3xl text-balance ">
                 Contacto directo a Lsv Systems ©
             </h3>
@@ -93,12 +93,12 @@ import  PulseDot  from '../components/PulseDot.astro';
                 Disponible para nuevos proyectos.
             </p>
         </div>
-        <div class="p-5 border border-neutral-200 border-l-blue-600 border-l-6">
+        <div class="p-5 border border-neutral-200 border-l-blue-600 border-l-4 md:justify-between flex flex-col">
             <div class="flex justify-between border-b pb-4 border-neutral-200">
                 <h3 class="font-anton uppercase text-3xl text-balance ">
                     Métricas & resultados
                 </h3>
-                <span class="font-grotesk uppercase text-xs font-light text-gray-600">
+                <span class="uppercase text-xs font-light text-gray-600">
                     Lsv Systems ©
                 </span>
             </div>
@@ -107,7 +107,7 @@ import  PulseDot  from '../components/PulseDot.astro';
                     <h4 class="font-anton text-3xl">
                         + 20 
                     </h4>
-                    <p class="text-gray-600 text-balance font-grotesk ">
+                    <p class="text-gray-600 text-balance ">
                         Proyectos realizados
                     </p>
                 </div>
@@ -115,7 +115,7 @@ import  PulseDot  from '../components/PulseDot.astro';
                     <h4 class="font-anton text-3xl text-blue-600">
                         99.9%
                     </h4>
-                    <p class="text-gray-600 text-balance font-grotesk">
+                    <p class="text-gray-600 text-balance ">
                         Uptime & Performance 95+
                     </p>
                 </div>
@@ -123,7 +123,7 @@ import  PulseDot  from '../components/PulseDot.astro';
                     <h4 class="font-anton uppercase text-3xl">
                         30 min
                     </h4>
-                    <p class="text-gray-600 text-balance font-grotesk">
+                    <p class="text-gray-600 text-balance ">
                         Tiempo de respuesta promedio
                     </p>
                 </div>
@@ -131,7 +131,7 @@ import  PulseDot  from '../components/PulseDot.astro';
                     <h4 class="font-anton uppercase text-3xl">
                         1:1
                     </h4>
-                    <p class="text-gray-600 text-balance font-grotesk">
+                    <p class="text-gray-600 text-balance ">
                         Trato directo sin intermediarios
                     </p>
                 </div>

@@ -2,6 +2,7 @@ import gsap from 'gsap';
 
 let mm = gsap.matchMedia();
 
+document.addEventListener('astro:page-load', () => {
 const buttons = document.querySelectorAll('[data-step-button]')
 const navItems = document.querySelectorAll('[data-step-nav]')
 const progressBar = document.querySelector('[data-progress-bar]')
@@ -49,4 +50,5 @@ mm.add({isDesktop: '(min-width: 768px)', isMobile: '(max-width: 767px)'}, (conte
 
     buttons.forEach(button => button.addEventListener('click', onClick))
     return () => buttons.forEach(button => button.removeEventListener('click', onClick))
+})
 })

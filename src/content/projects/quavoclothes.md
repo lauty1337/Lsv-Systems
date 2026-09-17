@@ -11,6 +11,7 @@ tags:
   - Moda
   - Website
 img: ../../assets/images/projects/mastercred/mastercred-landing.png
+imgCaseStudy: ../../assets/images/projects/mastercred/mastercred-landing.png
 url: https://www.quavoclothes.com
 rotate: rotate-2 hover:-rotate-2
 mt: mt-15

@@ -47,6 +47,12 @@ themeBtnLight.addEventListener('click', () => {
     localStorage.setItem('theme', 'light');
 });
 
+const backButton = document.querySelector('[data-back-button]');
+if (backButton) {
+  backButton.addEventListener('click', () => history.back());
+  return;
+}
+
 // Menu Header
 
 const nav = document.querySelector('[data-menu-header]');
