@@ -24,30 +24,30 @@ import  PulseDot  from '../components/PulseDot.astro';
 
     <div class="grid grid-cols-1 md:grid-cols-2 max-w-425 mx-auto gap-y-15 md:gap-5">
         
-        <form action="" method="POST" class="flex flex-col border border-neutral-200 p-5 row-span-2">
-            <small class="text-gray-600 uppercase mb-2">01 — Formulario</small>
-            <h3 class="font-anton uppercase text-3xl pb-3 border-b border-neutral-200 ">Especificaciones  iniciales</h3>
+        <form action="" method="POST" class="flex flex-col border border-neutral-200 dark:border-neutral-800 p-5 row-span-2">
+            <small class="text-gray-600 dark:text-gray-400 uppercase mb-2">01 — Formulario</small>
+            <h3 class="font-anton uppercase text-3xl pb-3 border-b border-neutral-200 dark:border-neutral-800 ">Especificaciones  iniciales</h3>
             
             <label class="font-medium uppercase mt-5 mb-2 ">Tu nombre o empresa *</label>
-            <input type="text" name="name" placeholder="Ej. Juan Perez o Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 bg-gray-100 p-3 transition-colors " />
+            <input type="text" name="name" placeholder="Ej. Juan Perez o Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors" />
 
             <fieldset class="flex flex-col gap-2 mt-10 md:grid md:grid-cols-2">
                 <legend class="font-medium uppercase mb-2 ">Tipo de proyecto *</legend>
 
-                <label class="bg-gray-100 flex items-center cursor-pointer gap-x-1 border-neutral-200 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
-                    <Flag class="size-5 text-black " />
+                <label class="bg-gray-100 dark:bg-neutral-900 flex items-center cursor-pointer gap-x-1 border-neutral-200 dark:border-neutral-800 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
+                    <Flag class="size-5 text-black dark:text-white " />
                     <input type="radio" name="project-type" value="landing-page" class="appearance-none" /> 
                     <span class="font-medium">Landing page </span>
                 </label>
 
-                <label class="bg-gray-100 flex items-center cursor-pointer gap-x-1 border-neutral-200 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
-                    <Company class="size-5 text-black " />
+                <label class="bg-gray-100 dark:bg-neutral-900 flex items-center cursor-pointer gap-x-1 border-neutral-200 dark:border-neutral-800 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
+                    <Company class="size-5 text-black dark:text-white " />
                     <input type="radio" name="project-type" value="web-institucional" class="appearance-none" />
                     <span class="font-medium"> Web Institucional</span>
                 </label>
 
-                <label class="bg-gray-100 flex items-center cursor-pointer gap-x-1 border-neutral-200 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
-                    <Commerce class="size-5 text-black  " />
+                <label class="bg-gray-100 dark:bg-neutral-900 flex items-center cursor-pointer gap-x-1 border-neutral-200 dark:border-neutral-800 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
+                    <Commerce class="size-5 text-black dark:text-white " />
                     <input type="radio" name="project-type" value="ecommerce" class="appearance-none" />
                     <span class="font-medium">E-commerce <small>(WooCommerce)</small></span>
                 </label>
@@ -55,23 +55,23 @@ import  PulseDot  from '../components/PulseDot.astro';
 
             <label class="mt-10 flex mb-2 md:justify-between ">
                 <span class="font-medium  uppercase">Contacto directo <br>(WhatsApp o email) *</span>
-                <small class="text-xs text-balance text-gray-600 ">Respondemos por ahi</small>
+                <small class="text-xs text-balance text-gray-600 dark:text-gray-400 ">Respondemos por ahi</small>
             </label>
-            <input type="text" name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" class="border border-neutral-200 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 p-3" />
+            <input type="text" name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" class="border border-neutral-200 dark:border-neutral-800 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 dark:bg-neutral-900 p-3" />
 
-            <label class="mt-10 font-medium uppercase mb-2 ">Contexto del proyecto <br> <small class="text-gray-600">(Opcional)</small> </label>
-            <textarea name="context" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 bg-gray-100 p-3 transition-colors resize-none h-25"></textarea>
+            <label class="mt-10 font-medium uppercase mb-2 ">Contexto del proyecto <br> <small class="text-gray-600 dark:text-gray-400">(Opcional)</small> </label>
+            <textarea name="context" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors resize-none h-25"></textarea>
 
-            <button type="submit" class="mt-10 bg-black text-white font-medium uppercase p-4 leading-4 text-balance hover:cursor-pointer hover:bg-neutral-700 transition-all duration-300">
+            <button type="submit" class="mt-10 bg-black dark:bg-white text-white dark:text-black font-medium uppercase p-4 leading-4 text-balance hover:cursor-pointer hover:bg-neutral-700 dark:hover:bg-neutral-300 transition-all duration-300">
                 Solicitar presupuesto & diagnostico
             </button>
         </form>
 
-        <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 md:justify-between">
+        <div class="flex flex-col bg-gray-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-5 md:justify-between">
             <h3 class="font-anton uppercase text-3xl text-balance ">
                 Contacto directo a Lsv Systems ©
             </h3>
-            <p class="text-gray-600 text-balance mt-3">
+            <p class="text-gray-600 dark:text-gray-400 text-balance mt-3">
                 Si preferis coordinar una llamada o una consulta sin rellenar formularios.
             </p>
             <a href="tel:5491133333333" target="_blank" rel="noopener noreferrer" class="mt-5 p-4  bg-blue-600 text-white flex items-center justify-between group hover:bg-blue-500 transition-colors duration-200">
@@ -81,57 +81,57 @@ import  PulseDot  from '../components/PulseDot.astro';
                 </span>
                 <ArrowRight class="size-7 group-hover:translate-x-2 transition-transform duration-200 " />
             </a>
-            <a href="mailto:info@lsvsystems.com" target="_blank" rel="noopener noreferrer" class="mt-2 mb-5 text-balance flex flex-row gap-y-2 justify-between p-4 bg-white border border-neutral-200 hover:bg-neutral-200 hover:border-neutral-300 transition-colors duration-200 group">
+            <a href="mailto:info@lsvsystems.com" target="_blank" rel="noopener noreferrer" class="mt-2 mb-5 text-balance flex flex-row gap-y-2 justify-between p-4 bg-white border border-neutral-200 hover:bg-neutral-200 hover:border-neutral-300  dark:hover:bg-neutral-300 transition-colors duration-200 group">
                 <span class="flex flex-col gap-y-2">
-                    <span class="font-medium uppercase">O agenda directa en Google Meet / Calendly</span>
+                    <span class="font-medium uppercase dark:text-black">O agenda directa en Google Meet / Calendly</span>
                     <small class="font-light text-neutral-600">Reserva tu consulta de 15 o 30 min segun tu agenda.</small>
                 </span>
-                <ArrowRight class="size-7  group-hover:translate-x-2 transition-transform duration-200 " />
+                <ArrowRight class="size-7 dark:text-black group-hover:translate-x-2 transition-transform duration-200 " />
             </a>
-            <p class="font-medium pt-5 border-t border-neutral-300 flex items-center gap-x-2">
+            <p class="font-medium pt-5 border-t border-neutral-300 dark:border-neutral-800 flex items-center gap-x-2">
                 <PulseDot color="green-600"/>
                 Disponible para nuevos proyectos.
             </p>
         </div>
-        <div class="p-5 border border-neutral-200 border-l-blue-600 border-l-4 md:justify-between flex flex-col">
-            <div class="flex justify-between border-b pb-4 border-neutral-200">
+        <div class="p-5 border border-neutral-200 bg-neutral-100 dark:bg-neutral-900 dark:border-neutral-800 dark:border-l-blue-600 border-l-blue-600 border-l-3 md:justify-between flex flex-col">
+            <div class="flex justify-between border-b pb-4 border-neutral-200 dark:border-neutral-800">
                 <h3 class="font-anton uppercase text-3xl text-balance ">
                     Métricas & resultados
                 </h3>
-                <span class="uppercase text-xs font-light text-gray-600">
+                <span class="uppercase text-xs font-light text-gray-600 dark:text-gray-400">
                     Lsv Systems ©
                 </span>
             </div>
             <div class="grid grid-cols-2 gap-5 mt-5">
-                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 gap-y-3">
+                <div class="flex flex-col bg-gray-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-5 gap-y-3">
                     <h4 class="font-anton text-3xl">
                         + 20 
                     </h4>
-                    <p class="text-gray-600 text-balance ">
+                    <p class="text-gray-600 dark:text-gray-400 text-balance ">
                         Proyectos realizados
                     </p>
                 </div>
-                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5">
+                <div class="flex flex-col bg-gray-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-5 gap-y-3">
                     <h4 class="font-anton text-3xl text-blue-600">
                         99.9%
                     </h4>
-                    <p class="text-gray-600 text-balance ">
+                    <p class="text-gray-600 dark:text-gray-400 text-balance ">
                         Uptime & Performance 95+
                     </p>
                 </div>
-                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 gap-y-3">
+                <div class="flex flex-col bg-gray-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-5 gap-y-3">
                     <h4 class="font-anton uppercase text-3xl">
                         30 min
                     </h4>
-                    <p class="text-gray-600 text-balance ">
+                    <p class="text-gray-600 dark:text-gray-400 text-balance ">
                         Tiempo de respuesta promedio
                     </p>
                 </div>
-                <div class="flex flex-col bg-gray-100 border border-neutral-300 p-5 gap-y-3">
+                <div class="flex flex-col bg-gray-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-5 gap-y-3">
                     <h4 class="font-anton uppercase text-3xl">
                         1:1
                     </h4>
-                    <p class="text-gray-600 text-balance ">
+                    <p class="text-gray-600 dark:text-gray-400 text-balance ">
                         Trato directo sin intermediarios
                     </p>
                 </div>

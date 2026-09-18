@@ -110,12 +110,12 @@ const steps = [
             </div>
         </div>
     </div>
-    <div class="border border-neutral-200 md:flex p-4 max-w-425 mx-auto justify-between gap-x-10 items-center">
+    <div class="border border-neutral-200 dark:border-neutral-800 md:flex p-4 max-w-425 mx-auto justify-between gap-x-10 items-center">
         <ol class="flex flex-row justify-between md:justify-start md:flex-1 gap-x-10">
             {navSteps.map((step) => (
                 <li data-step-nav class="group flex flex-col md:flex-row items-center md:gap-x-7 opacity-50 aria-[current=step]:opacity-100 transition-opacity duration-300">
-                    <span class="border border-neutral-300 text-gray-600 p-2 rounded-full items-center justify-center font-anton transition-colors duration-300 group-aria-[current=step]:border-blue-600 group-aria-[current=step]:text-blue-600">{step.step}</span>
-                    <div class="flex flex-col text-black/30 transition-colors duration-300 group-aria-[current=step]:text-black">
+                    <span class="border border-neutral-200 dark:border-neutral-800 text-gray-600 dark:text-gray-400 p-2 rounded-full items-center justify-center font-anton transition-colors duration-300 group-aria-[current=step]:border-blue-600 group-aria-[current=step]:text-blue-600">{step.step}</span>
+                    <div class="flex flex-col text-black/30 dark:text-white/30 transition-colors duration-300 group-aria-[current=step]:text-black dark:group-aria-[current=step]:text-white">
                     <span class="hidden md:block group-aria-[current=step]:font-medium">{step.stepLabel}</span>
                     <span class="hidden md:block">{step.stepTitle}</span>
                     </div>
@@ -125,7 +125,7 @@ const steps = [
         <div class="flex flex-row items-center mt-5 md:mt-0 gap-x-5 md:flex-1">
             <label class="shrink-0 text-sm md:text-base uppercase tracking-widest opacity-50">Progreso</label>
             <div class="w-full h-1.5 rounded-full bg-neutral-800  relative">
-                <div data-progress-bar class="absolute top-0 left-0 h-full bg-blue-600 dark:bg-blue-400 rounded-full" style="width: 0%;"></div>
+                <div data-progress-bar class="absolute top-0 left-0 h-full bg-blue-600 rounded-full" style="width: 0%;"></div>
             </div>
             <span data-progress-label class="text-sm md:text-base font-light">0%</span>
         </div>
@@ -134,37 +134,37 @@ const steps = [
         {steps.map((step, index) => (
             <div class="grid w-full md:h-140 md:overflow-hidden relative ">
 
-                <button role="tab" data-step-button data-step-index={index} aria-controls={`step-${step.step}`} class="cursor-pointer flex flex-col p-3 gap-y-3 dots-bg border border-neutral-200 md:relative md:grid md:transform-3d hover:border-blue-600  transition-colors duration-300">
+                <button role="tab" data-step-button data-step-index={index} aria-controls={`step-${step.step}`} class="cursor-pointer flex flex-col p-3 gap-y-3 dots-bg border border-neutral-200 dark:border-neutral-800 md:relative md:grid md:transform-3d hover:border-blue-600  transition-colors duration-300">
                     
                     <!--Boton en Mobile -->
-                    <span class="flex items-center gap-x-2 text-gray-600 md:hidden">
+                    <span class="flex items-center gap-x-2 text-gray-600 dark:text-gray-400 md:hidden">
                         <PulseDot data-pulse color="blue-600" />
                         <span class="text-sm">Paso {step.step} — {step.stepLabel}</span>
                     </span>
                     <span class="font-anton text-xl flex tracking-wider uppercase md:hidden"> {step.stepTitle}</span>
                     <span class="flex gap-1 flex-wrap -mt-2 md:hidden">{step.stepLabels.map((label) => (
-                        <span class="text-xs text-gray-600">{label}</span>
+                        <span class="text-xs text-gray-600 dark:text-gray-400">{label}</span>
                     ))}</span>
                     <div class="overflow-hidden md:hidden h-0 w-full" data-panel-wrapper >
                         <span role="tabpanel" class="flex flex-col text-start">
-                            <span class=" text-gray-600">{step.stepDescription}</span>
+                            <span class=" text-gray-600 dark:text-gray-200">{step.stepDescription}</span>
                             <span class="flex flex-col mt-6">
                                 <span class="text-sm uppercase font-medium tracking-wider">Fases de la entrega:</span>
-                                <span class="text-sm flex flex-col gap-y-1 mt-2 text-gray-600">{step.stepDeliverables.map((deliverable) => (
+                                <span class="text-sm flex flex-col gap-y-1 mt-2 text-gray-600 dark:text-gray-400">{step.stepDeliverables.map((deliverable) => (
                                     <span> - {deliverable}</span>
                                 ))}</span>
                             </span>
                         </span>
                     </div>
                     <span class="flex justify-between items-center md:hidden">
-                        <span class="text-sm text-black/50">Paso {step.step}/04</span>
+                        <span class="text-sm text-gray-600">Paso {step.step}/04</span>
                         <span class="text-xl" data-icon>↓</span>
                     </span>
 
                     <!--Boton en Desktop -->
                     <span data-panel-button class="hidden md:flex justify-between items-center flex-col h-full md:absolute md:inset-0 md:backface-hidden">
                         <span class="font-bold text-3xl mt-10 tracking-wider"> {step.step}</span>
-                        <span class="[writing-mode:vertical-lr] text-md text-gray-600 uppercase tracking-wider"> {step.stepLabel}</span>
+                        <span class="[writing-mode:vertical-lr] text-md text-gray-600 dark:text-gray-400 uppercase tracking-wider"> {step.stepLabel}</span>
                         <span class="text-xl mb-10">+</span>
                     </span>
                     <div data-panel-desktop class="hidden md:block overflow-hidden md:absolute md:inset-0 md:p-10 md:backface-hidden md:rotate-y-180">
@@ -176,7 +176,7 @@ const steps = [
                                     {step.step}
                                 </span>
                             </span>
-                            <span class="flex flex-row items-center gap-x-2  text-gray-600">
+                            <span class="flex flex-row items-center gap-x-2  text-gray-600 dark:text-gray-400 ">
                                 <PulseDot class="size-10" color="blue-600"/>
                                 <span>
                                     Paso {step.step} — {step.stepLabel}
@@ -187,13 +187,13 @@ const steps = [
                             </span>
                             <span class="flex flex-row gap-x-2">
                                 {step.stepLabels.map((label) => (
-                                    <span class="text-xs text-gray-600">{label}</span>
+                                    <span class="text-xs text-gray-600 dark:text-gray-400">{label}</span>
                                 ))}
                             </span>
                         </span>
 
                         <span class=" text-start text-balance mt-15">
-                            <span class=" text-gray-800">
+                            <span class=" text-gray-800 dark:text-gray-200">
                                 {step.stepDescription}
                             </span>
                         </span>
@@ -201,7 +201,7 @@ const steps = [
                             <span class="text-sm uppercase tracking-wider mt-10">
                                 <span class="font-medium">Fases de la entrega:</span>
                             </span>
-                            <span class="text-sm flex flex-col items-start gap-y-1 mt-2 text-gray-600">
+                            <span class="text-sm flex flex-col items-start gap-y-1 mt-2 text-gray-600 dark:text-gray-400 ">
                                 {step.stepDeliverables.map((deliverable) => (
                                     <span> - {deliverable}</span>
                                 ))}
