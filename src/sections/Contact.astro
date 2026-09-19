@@ -29,7 +29,7 @@ import  PulseDot  from '../components/PulseDot.astro';
             <h3 class="font-anton uppercase text-3xl pb-3 border-b border-neutral-200 dark:border-neutral-800 ">Especificaciones  iniciales</h3>
             
             <label class="font-medium uppercase mt-5 mb-2 ">Tu nombre o empresa *</label>
-            <input type="text" name="name" placeholder="Ej. Juan Perez o Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors" />
+            <input type="text" required aria-required="true" minlength="3" maxlength="30" name="name" placeholder="Ej. Juan Perez o Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors" />
 
             <fieldset class="flex flex-col gap-2 mt-10 md:grid md:grid-cols-2">
                 <legend class="font-medium uppercase mb-2 ">Tipo de proyecto *</legend>
@@ -42,7 +42,7 @@ import  PulseDot  from '../components/PulseDot.astro';
 
                 <label class="bg-gray-100 dark:bg-neutral-900 flex items-center cursor-pointer gap-x-1 border-neutral-200 dark:border-neutral-800 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
                     <Company class="size-5 text-black dark:text-white " />
-                    <input type="radio" name="project-type" value="web-institucional" class="appearance-none" />
+                    <input type="radio" name="project-type" value="web-institucional"  class="appearance-none" />
                     <span class="font-medium"> Web Institucional</span>
                 </label>
 
@@ -57,12 +57,13 @@ import  PulseDot  from '../components/PulseDot.astro';
                 <span class="font-medium  uppercase">Contacto directo <br>(WhatsApp o email) *</span>
                 <small class="text-xs text-balance text-gray-600 dark:text-gray-400 ">Respondemos por ahi</small>
             </label>
-            <input type="text" name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" class="border border-neutral-200 dark:border-neutral-800 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 dark:bg-neutral-900 p-3" />
+            <input type="text"  name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" minlength="10" maxlength="40" required aria-required="true"
+            class="border border-neutral-200 dark:border-neutral-800 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 dark:bg-neutral-900 p-3" />
 
             <label class="mt-10 font-medium uppercase mb-2 ">Contexto del proyecto <br> <small class="text-gray-600 dark:text-gray-400">(Opcional)</small> </label>
-            <textarea name="context" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors resize-none h-25"></textarea>
+            <textarea name="context" required aria-required="true" maxlength="200" minlength="10" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors resize-none h-25"></textarea>
 
-            <button type="submit" class="mt-10 bg-black dark:bg-white text-white dark:text-black font-medium uppercase p-4 leading-4 text-balance hover:cursor-pointer hover:bg-neutral-700 dark:hover:bg-neutral-300 transition-all duration-300">
+            <button type="submit" class="mt-10 bg-black dark:bg-white text-white dark:text-black font-medium uppercase p-4 leading-4 text-balance hover:cursor-pointer hover:bg-neutral-700 dark:hover:bg-neutral-400 transition-all duration-300">
                 Solicitar presupuesto & diagnostico
             </button>
         </form>
@@ -81,10 +82,10 @@ import  PulseDot  from '../components/PulseDot.astro';
                 </span>
                 <ArrowRight class="size-7 group-hover:translate-x-2 transition-transform duration-200 " />
             </a>
-            <a href="mailto:info@lsvsystems.com" target="_blank" rel="noopener noreferrer" class="mt-2 mb-5 text-balance flex flex-row gap-y-2 justify-between p-4 bg-white border border-neutral-200 hover:bg-neutral-200 hover:border-neutral-300  dark:hover:bg-neutral-300 transition-colors duration-200 group">
-                <span class="flex flex-col gap-y-2">
-                    <span class="font-medium uppercase dark:text-black">O agenda directa en Google Meet / Calendly</span>
-                    <small class="font-light text-neutral-600">Reserva tu consulta de 15 o 30 min segun tu agenda.</small>
+            <a href="https://meet.google.com/byo-euzc-uew" target="_blank" rel="noopener noreferrer" class="mt-2 mb-5 text-balance flex flex-row gap-y-2 justify-between p-4 bg-white border border-neutral-200 hover:bg-neutral-200 hover:border-neutral-300  dark:hover:bg-neutral-300 transition-colors duration-200 group">
+                <span class="flex flex-col gap-y-2 text-pretty">
+                    <span class="font-medium uppercase dark:text-black ">O agenda directa en Google Meet</span>
+                    <small class="font-light text-neutral-600">Reserva tu consulta de 15-30 min segun tu agenda.</small>
                 </span>
                 <ArrowRight class="size-7 dark:text-black group-hover:translate-x-2 transition-transform duration-200 " />
             </a>
@@ -138,4 +139,8 @@ import  PulseDot  from '../components/PulseDot.astro';
             </div>
         </div>
     </div>
+
 </section>
+    <script>
+        import '../scripts/Contact.js'; 
+    </script>

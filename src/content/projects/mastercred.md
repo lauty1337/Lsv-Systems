@@ -12,7 +12,7 @@ tags:
   - Website
 img: ../../assets/images/projects/mastercred/mastercred-landing.png
 imgCaseStudy: ../../assets/images/projects/mastercred/casestudy-mastercred.jpg
-url: https://www.mastercred.com
+url: https://master-cred.vercel.app/
 rotate: -rotate-2 hover:rotate-2
 mt: mt-0
 ---
