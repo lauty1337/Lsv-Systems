@@ -3,6 +3,7 @@ import Commerce from '../assets/svgs/Commerce.svg';
 import Company from '../assets/svgs/Company.svg';
 import Flag from '../assets/svgs/Flag.svg';
 import ArrowRight from '../assets/svgs/ArrowRight.svg';
+import WhatsApp from '../assets/svgs/WhatsApp.svg';
 import  PulseDot  from '../components/PulseDot.astro';
 ---
 
@@ -25,11 +26,37 @@ import  PulseDot  from '../components/PulseDot.astro';
     <div class="grid grid-cols-1 md:grid-cols-2 max-w-425 mx-auto gap-y-15 md:gap-5">
         
         <form action="" method="POST" class="flex flex-col border border-neutral-200 dark:border-neutral-800 p-5 row-span-2">
+            <div class="bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-3 gap-3 flex flex-col md:flex-row
+            md:justify-between">
+                <div class="flex items-center gap-x-3">
+                    <WhatsApp class="size-5 text-black dark:text-white " />
+                    <div class="flex flex-col">
+                        <p class="text-gray-600 dark:text-gray-400 text-xs md:text-sm">¿Preferis contactarme por WhatsApp? </p>
+                        <p class="font-medium text-sm md:text-base">Escribime a través de este número </p>
+                    </div>
+                </div>
+                <a href="https://wa.me/5491133333333" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition-colors duration-200 gap-x-3 flex items-center justify-center w-full md:w-auto px-4 py-2 bg-emerald-600/10 border-emerald-900/40 dark:bg-emerald-900/40 border dark:border-emerald-600/40 hover:bg-emerald-600/30 group">
+                    <span class="text-sm font-medium uppercase text-emerald-600">Escribir por WhatsApp</span>
+                    <ArrowRight class="size-5 text-emerald-600 group-hover:translate-x-2 transition-transform duration-200 " />
+                </a>
+            </div>
+            <small class="text-gray-600 dark:text-gray-400 text-xs md:text-sm justify-center flex my-5"> O completa el formulario a continuacion</small>
             <small class="text-gray-600 dark:text-gray-400 uppercase mb-2">01 — Formulario</small>
-            <h3 class="font-anton uppercase text-3xl pb-3 border-b border-neutral-200 dark:border-neutral-800 ">Especificaciones  iniciales</h3>
-            
-            <label class="font-medium uppercase mt-5 mb-2 ">Tu nombre o empresa *</label>
-            <input type="text" required aria-required="true" minlength="3" maxlength="30" name="name" placeholder="Ej. Juan Perez o Studio Perez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors" />
+            <h3 class="font-anton uppercase text-3xl md:text-4xl ">Especificaciones  iniciales</h3>
+            <div class="flex flex-col md:grid md:grid-cols-2 mt-10 gap-5  ">
+                <div class="flex flex-col">
+                    <label class="font-medium uppercase mb-2 ">Tu nombre o empresa *</label>
+                    <input type="text" required aria-required="true" minlength="3" maxlength="30" name="name" placeholder="Ej. Juan Pérez o Studio Pérez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors" />
+                </div>
+                <div class="flex flex-col  ">
+                    <label class=" flex mb-2 md:justify-between ">
+                    <span class="font-medium  uppercase">WhatsApp o email   *</span>
+                    <small class="text-xs text-balance text-gray-600 dark:text-gray-400 ">Respondemos por ahí</small>
+                    </label>
+                    <input type="text"  name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" minlength="10" maxlength="40" required aria-required="true"
+                    class="border border-neutral-200 dark:border-neutral-800 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 dark:bg-neutral-900 p-3" />
+                </div>
+            </div>
 
             <fieldset class="flex flex-col gap-2 mt-10 md:grid md:grid-cols-2">
                 <legend class="font-medium uppercase mb-2 ">Tipo de proyecto *</legend>
@@ -53,47 +80,17 @@ import  PulseDot  from '../components/PulseDot.astro';
                 </label>
             </fieldset>
 
-            <label class="mt-10 flex mb-2 md:justify-between ">
-                <span class="font-medium  uppercase">Contacto directo <br>(WhatsApp o email) *</span>
-                <small class="text-xs text-balance text-gray-600 dark:text-gray-400 ">Respondemos por ahi</small>
-            </label>
-            <input type="text"  name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" minlength="10" maxlength="40" required aria-required="true"
-            class="border border-neutral-200 dark:border-neutral-800 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 dark:bg-neutral-900 p-3" />
+            
 
             <label class="mt-10 font-medium uppercase mb-2 ">Contexto del proyecto <br> <small class="text-gray-600 dark:text-gray-400">(Opcional)</small> </label>
-            <textarea name="context" required aria-required="true" maxlength="200" minlength="10" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors resize-none h-25"></textarea>
+            <textarea name="context" maxlength="200" minlength="10" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors resize-none h-25"></textarea>
 
             <button type="submit" class="mt-10 bg-black dark:bg-white text-white dark:text-black font-medium uppercase p-4 leading-4 text-balance hover:cursor-pointer hover:bg-neutral-700 dark:hover:bg-neutral-400 transition-all duration-300">
-                Solicitar presupuesto & diagnostico
+                Solicitar presupuesto & diagnóstico
             </button>
         </form>
 
-        <div class="flex flex-col bg-gray-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 p-5 md:justify-between">
-            <h3 class="font-anton uppercase text-3xl text-balance ">
-                Contacto directo a Lsv Systems ©
-            </h3>
-            <p class="text-gray-600 dark:text-gray-400 text-pretty  pb-4 border-b border-neutral-300 dark:border-neutral-800">
-                Si preferis coordinar una llamada o una consulta sin rellenar formularios.
-            </p>
-            <a href="tel:5491133333333" target="_blank" rel="noopener noreferrer" class="mt-5 p-4 border-blue-600 border text-black dark:text-white flex items-center justify-between group hover:bg-blue-600/10 transition-colors duration-200">
-                <span class="flex flex-col gap-y-2">
-                    <span class="font-medium uppercase">Chatear por whatsapp</span>
-                    <small class="font-light text-neutral-600 dark:text-neutral-400">Poco tiempo de espera</small>
-                </span>
-                <ArrowRight class="size-7 text-blue-600 group-hover:translate-x-2 transition-transform duration-200 " />
-            </a>
-            <a href="https://meet.google.com/byo-euzc-uew" target="_blank" rel="noopener noreferrer" class="mt-2 mb-5 items-center text-balance flex flex-row gap-y-2 justify-between p-4  border border-neutral-300 dark:border-neutral-800 hover:bg-neutral-200 hover:border-neutral-400 dark:hover:border-neutral-700 dark:hover:bg-neutral-800 transition-colors duration-200 group">
-                <span class="flex flex-col gap-y-2 text-pretty">
-                    <span class="font-medium uppercase dark:text-white ">O agenda directa en Google Meet</span>
-                    <small class="font-light text-neutral-600 dark:text-neutral-400">Reserva tu consulta de 15-30 min segun tu agenda.</small>
-                </span>
-                <ArrowRight class="size-7 dark:text-white group-hover:translate-x-2 transition-transform duration-200 " />
-            </a>
-            <p class="font-medium pt-5 border-t border-neutral-300 dark:border-neutral-800 flex items-center gap-x-2">
-                <PulseDot color="green-600"/>
-                Disponible para nuevos proyectos.
-            </p>
-        </div>
+        
         <div class="p-5 border border-neutral-200 bg-neutral-100 dark:bg-neutral-900 dark:border-neutral-800 dark:border-l-blue-600 border-l-blue-600 border-l-3 md:justify-between flex flex-col">
             <div class="flex justify-between border-b pb-4 border-neutral-200 dark:border-neutral-800">
                 <h3 class="font-anton uppercase text-3xl text-balance ">

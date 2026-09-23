@@ -27,18 +27,18 @@ const steps = [
     {
         step: '01',
         stepTitle: 'Estructura',
-        stepLabel: 'Estructura y diagnostico',
+        stepLabel: 'Estructura y diagnóstico',
         stepLabels: [
             '#Briefing',
-            '#Diagnostico',
+            '#Diagnóstico',
             '#Plan de trabajo',
         ],
-        stepDescription: 'Primero lo primero: quiero entender bien tu negocio, a quién le vendes y qué necesitas lograr exacto. Nos sentamos a revisar tus ideas, resolvemos dudas iniciales y definimos la hoja de ruta para que ambos sepamos hacia dónde vamos desde el día uno.',
+        stepDescription: 'Primero lo primero: quiero entender bien tu negocio, a quién le vendés y qué necesitás lograr exacto. Nos sentamos a revisar tus ideas, resolvemos dudas iniciales y definimos la hoja de ruta para que ambos sepamos hacia dónde vamos desde el día uno.',
         stepImage: 'https://via.placeholder.com/150',
         stepDeliverables: [
             'Documento de Briefing',
             'Cronograma de trabajo',
-            'Cotizacion',
+            'Cotización',
         ]
     },
     {
@@ -60,16 +60,16 @@ const steps = [
     {
         step: '03',
         stepTitle: 'Desarrollo',
-        stepLabel: 'Programacion y desarrollo',
+        stepLabel: 'Programación y desarrollo',
         stepLabels: [
-            '#Programacion',
-            '#Codigo',
+            '#Programación',
+            '#Código',
             '#Dev',
         ],
         stepDescription: 'Ya con el diseño aprobado, me pongo a construir. Escribo código limpio, rápido y seguro, conectando todas las herramientas que tu proyecto necesita para funcionar sin fallas ni sorpresas.',
         stepImage: 'https://via.placeholder.com/150',
         stepDeliverables: [
-            'Codigo fuente',
+            'Código fuente',
             'Testing',
             'Enlace privado',
         ]
@@ -77,7 +77,7 @@ const steps = [
     {
         step: '04',
         stepTitle: 'Lanzamiento',
-        stepLabel: 'Presentacion y lanzamiento',
+        stepLabel: 'Presentación y lanzamiento',
         stepLabels: [
             '#QA',
             '#Lanzamiento',
@@ -86,9 +86,9 @@ const steps = [
         stepDescription: 'Hacemos las últimas pruebas para asegurarnos de que todo cargue rápido y vuele. Publicamos el proyecto, te entrego todos los accesos y te enseño a gestionarlo para que tengas el control total desde el primer segundo.',
         stepImage: 'https://via.placeholder.com/150',
         stepDeliverables: [
-            'Enlace publico',
+            'Enlace público',
             'Accesos',
-            'Codigo 100% propio',
+            'Código 100% propio',
         ]
     }
 
@@ -106,7 +106,7 @@ const steps = [
             <h2 class="font-anton uppercase mx-auto md:mx-40 px-4"> Proceso </h2>
             <div class="flex-1 flex justify-end md:justify-between items-center">
                 <span class="hidden md:block translate-y-4 font-light text-lg">100% Transparente</span>
-                <span class="font-anton uppercase translate-y-6 md:translate-y-15">10 Dias</span>
+                <span class="font-anton uppercase translate-y-6 md:translate-y-15">10 Días</span>
             </div>
         </div>
     </div>
@@ -136,7 +136,7 @@ const steps = [
 
                 <button role="tab" data-step-button data-step-index={index} aria-controls={`step-${step.step}`} class="cursor-pointer flex flex-col p-3 gap-y-3 dots-bg border border-neutral-200 dark:border-neutral-800 md:relative md:grid md:transform-3d hover:border-blue-600  transition-colors duration-300">
                     
-                    <!--Boton en Mobile -->
+                    <!--Botón en Mobile -->
                     <span class="flex items-center gap-x-2 text-gray-600 dark:text-gray-400 md:hidden">
                         <PulseDot data-pulse color="blue-600" />
                         <span class="text-sm">Paso {step.step} — {step.stepLabel}</span>
@@ -161,7 +161,7 @@ const steps = [
                         <span class="text-xl" data-icon>↓</span>
                     </span>
 
-                    <!--Boton en Desktop -->
+                    <!--Botón en Desktop -->
                     <span data-panel-button class="hidden md:flex justify-between items-center flex-col h-full md:absolute md:inset-0 md:backface-hidden">
                         <span class="font-bold text-3xl mt-10 tracking-wider"> {step.step}</span>
                         <span class="[writing-mode:vertical-lr] text-md text-gray-600 dark:text-gray-400 uppercase tracking-wider"> {step.stepLabel}</span>

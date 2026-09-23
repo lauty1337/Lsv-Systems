@@ -1,10 +1,10 @@
 ---
-title: AM Vehiculos
+title: AM Vehículos
 titleLabel: asdjdasj
 titleSEO: AM Vehículos — E-commerce Autos a Escala Argentina | LSV Systems
 descriptionSEO: E-commerce de autos a escala coleccionables en Argentina. Diseño web y desarrollo a cargo de LSV Systems, agencia web argentina.
 descriptionLabel: adsdsaadskdksa
-time: '6 dias exactos'
+time: '6 días exactos'
 year: '©LSV | 2026'
 tags:
   - E-Commerce

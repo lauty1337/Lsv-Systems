@@ -35,7 +35,7 @@ const isProjectPage = Astro.url.pathname.startsWith('/projects/');
                 </div>
                 
                 <div class="relative inline-block overflow-hidden h-5 w-15 text-white dark:text-black font-anton uppercase px-0.5">
-                    <span data-label-menu class="absolute inset-0 flex items-center justify-center">{isProjectPage ? 'Volver' : 'Menu'}</span>
+                    <span data-label-menu class="absolute inset-0 flex items-center justify-center">{isProjectPage ? 'Volver' : 'Menú'}</span>
                     {!isProjectPage && <span data-label-close class="absolute inset-0 flex items-center justify-center translate-y-full">Cerrar</span>}
                 </div>
 
@@ -55,7 +55,7 @@ const isProjectPage = Astro.url.pathname.startsWith('/projects/');
                             <Image src={logo} alt="Logo de Mastercred" title="Logo de Mastercred" class="size-7 md:size-8" />
 
                             <span class="flex flex-col gap-0.5">
-                                <span class="text-xs dark:text-black/70 text-white/70">Ultimo Proyecto</span>
+                                <span class="text-xs dark:text-black/70 text-white/70">Último Proyecto</span>
                                 <span class="text-sm font-anton text-white dark:text-black tracking-tighter uppercase ">MasterCred</span>
                             </span>
                             </div>
