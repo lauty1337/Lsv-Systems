@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import  PulseDot  from '../../components/PulseDot.astro';
 import ArrowRight from '../../assets/svgs/ArrowRight.svg'
+import WhatsAppIcon from '../../assets/svgs/WhatsApp.svg'
 export async function getStaticPaths() {
     const projects = await getCollection('projects');
 
@@ -49,19 +50,19 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
                     </p>
                     <dl class="border uppercase border-neutral-200 dark:border-neutral-700 divide-y divide-neutral-300/50 dark:divide-neutral-600/50 dots-bg">
                         <div class="flex justify-between p-3">
-                            <dt class="text-gray-600 dark:text-gray-300">Cliente</dt>
+                            <dt class="text-gray-600 dark:text-gray-400">Cliente</dt>
                             <dd class="font-medium">{title}</dd>
                         </div>
                         <div class="flex justify-between p-3">
-                            <dt class="text-gray-600 dark:text-gray-300">Plazo de entrega</dt>
+                            <dt class="text-gray-600 dark:text-gray-400">Plazo de entrega</dt>
                             <dd class="font-medium text-blue-600">{time}</dd>
                         </div>
                         <div class="flex justify-between p-3">
-                            <dt class="text-gray-600 dark:text-gray-300">Performance</dt>
+                            <dt class="text-gray-600 dark:text-gray-400">Performance</dt>
                             <dd class="font-medium">100%</dd>
                         </div>
                         <div class="flex justify-between p-3">
-                            <dt class="text-gray-600 dark:text-gray-300">Stack Tecnológico</dt>
+                            <dt class="text-gray-600 dark:text-gray-400">Stack Tecnológico</dt>
                             <dd class="font-medium">
                                 <ul class="flex flex-row gap-x-2 gap-y-1">
                                     <li>TailwindCSS </li>
@@ -94,7 +95,7 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
                     </p>
                     <div class="grid grid-cols-2 md:flex gap-3">
                         <div class="flex flex-col gap-y-1 p-3 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
-                            <span class="uppercase text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                            <span class="uppercase text-gray-600 dark:text-gray-400 text-sm md:text-base">
                                 Tiempo de entrega
                             </span>
                             <span class="font-medium">
@@ -102,7 +103,7 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
                             </span>
                         </div>
                         <div class="flex flex-col gap-y-1 p-3 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
-                            <span class="uppercase text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                            <span class="uppercase text-gray-600 dark:text-gray-400 text-sm md:text-base">
                                 Trato
                             </span>
                             <span class="font-medium">
@@ -110,7 +111,7 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
                             </span>
                         </div>
                         <div class="flex flex-col col-span-2 gap-y-1 p-3 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
-                            <span class="uppercase text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                            <span class="uppercase text-gray-600 dark:text-gray-400 text-sm md:text-base">
                                 Rendimiento
                             </span>
                             <span class="font-medium text-blue-600">
@@ -123,29 +124,18 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
                         Disponible para nuevos proyectos.
                     </p>
                 </div>
-                <div class="flex flex-col gap-y-3 md:justify-center  md:w-1/2">
-                    <a href="https://calendly.com/lsv-systems/30min" target="_blank" rel="noopener noreferrer" class="flex flex-row items-center gap-y-1 justify-between bg-blue-600 text-white group p-2 hover:bg-blue-500 transition-all duration-200">
-                        <span class="flex flex-col gap-y-1">
-                            <span class="font-medium uppercase">
-                                Chatear por WhatsApp
-                            </span>
-                            <span class="font-light text-sm text-neutral-300 dark:text-neutral-400"> 
-                            Poco tiempo de espera
-                            </span>    
-                        </span>
-                        <ArrowRight class="size-7 group-hover:translate-x-1 transition-all duration-200" />
-                    </a>
-                    <a href="https://meet.google.com/byo-euzc-uew" target="_blank" rel="noopener noreferrer" class="flex flex-row items-center p-2 gap-y-1 justify-between border border-black hover:bg-neutral-200 dark:border-white/20 dark:hover:bg-neutral-900 transition-all duration-200 group">
-                        <span class="flex flex-col gap-y-1">
-                            <span class="font-medium uppercase">
-                                Agenda directa en Google Meet 
-                            </span>
-                            <span class="font-light text-balance text-sm text-neutral-600 dark:text-neutral-400">
-                                Reserva tu consulta de 15 o 30 min según tu agenda.
-                            </span>
-                        </span>
-                        <ArrowRight class="size-7 group-hover:translate-x-1 transition-all duration-200" />
-                    </a>
+                <div class="flex flex-col gap-y-3 md:justify-center w-fit">
+                    <div class="bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-3  gap-3 flex flex-col md:flex-row
+            md:justify-between">
+                <div class="flex items-center gap-x-3">
+                    <WhatsAppIcon class="size-5 text-black dark:text-white " />
+                        <p class="font-medium text-sm md:text-base">Escribime a través de este número </p>
+                </div>
+                <a href="https://wa.me/5491133333333" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition-colors duration-200 gap-x-3 flex items-center justify-center w-full md:w-auto px-4 py-2 bg-emerald-600/10 border-emerald-900/40 dark:bg-emerald-900/40 border dark:border-emerald-600/40 hover:bg-emerald-600/30 group">
+                    <span class="text-sm font-medium uppercase text-emerald-600">Escribir por WhatsApp</span>
+                    <ArrowRight class="size-5 text-emerald-600 group-hover:translate-x-2 transition-transform duration-200 " />
+                </a>
+            </div>
                 </div>
             </div>
         </div>
