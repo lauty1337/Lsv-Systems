@@ -23,14 +23,14 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
         <article class="py-10">
 
             <header class="flex flex-col justify-center items-center gap-y-3 mb-30">
-                <div  class="flex flex-col items-center font-medium text-xs uppercase gap-2 md:flex-row md:text-sm">
+                <div  class="flex flex-col items-center font-medium text-xs uppercase gap-2 md:flex-row md:text-sm z-20">
                     <span data-project-label class="py-1 px-4 bg-black dark:bg-white text-white dark:text-black flex items-center gap-x-2">
                         <PulseDot color="green-600" />
                         Estado: Activo
                     </span>
                     <div class="flex gap-x-2">
-                        <span data-project-label class="py-1 px-4 text-blue-600 border border-blue-600 bg-blue-600/10"> Conversión 100%</span>
-                        <span data-project-label class="py-1 px-4 border border-neutral-400 dark:border-neutral-600">Astro Build</span>
+                        <span data-project-label class="py-1 px-4 text-blue-400 border border-blue-400 bg-blue-950"> Conversión 100%</span>
+                        <span data-project-label class="py-1 px-4 border border-neutral-400 bg-white dark:bg-black dark:border-neutral-600">Astro Build</span>
                     </div>
                 </div>
                 <h1 class="font-anton uppercase tracking-tighter leading-none text-[88px] md:text-[320px] flex "transition:name={`project-${entry.id}-title`}>{title}</h1>
@@ -48,7 +48,7 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
                     <p class="font-medium text-gray-600 dark:text-gray-300 text-md md:text-lg text-balance ">
                         {descriptionSEO}
                     </p>
-                    <dl class="border uppercase border-neutral-200 dark:border-neutral-700 divide-y divide-neutral-300/50 dark:divide-neutral-600/50 dots-bg">
+                    <dl class="border uppercase border-neutral-200 dark:border-neutral-600 divide-y divide-neutral-300/50 dark:divide-neutral-800 dots-bg">
                         <div class="flex justify-between p-3">
                             <dt class="text-gray-600 dark:text-gray-400">Cliente</dt>
                             <dd class="font-medium">{title}</dd>
@@ -119,23 +119,33 @@ const { title, titleLabel, titleSEO, descriptionSEO, descriptionLabel, year, tim
                             </span>
                         </div>
                     </div>
-                    <p class="font-medium uppercase flex items-center text-sm gap-x-2">
+                    <p class="font-medium hidden  uppercase md:flex items-center text-sm gap-x-2">
                         <PulseDot color="green-600"/>
                         Disponible para nuevos proyectos.
                     </p>
                 </div>
-                <div class="flex flex-col gap-y-3 md:justify-center w-fit">
-                    <div class="bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-3  gap-3 flex flex-col md:flex-row
-            md:justify-between">
-                <div class="flex items-center gap-x-3">
-                    <WhatsAppIcon class="size-5 text-black dark:text-white " />
-                        <p class="font-medium text-sm md:text-base">Escribime a través de este número </p>
-                </div>
-                <a href="https://wa.me/5491133333333" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition-colors duration-200 gap-x-3 flex items-center justify-center w-full md:w-auto px-4 py-2 bg-emerald-600/10 border-emerald-900/40 dark:bg-emerald-900/40 border dark:border-emerald-600/40 hover:bg-emerald-600/30 group">
-                    <span class="text-sm font-medium uppercase text-emerald-600">Escribir por WhatsApp</span>
-                    <ArrowRight class="size-5 text-emerald-600 group-hover:translate-x-2 transition-transform duration-200 " />
-                </a>
-            </div>
+                <div class="flex flex-col gap-y-3  mt-4 ">
+                    <div class="bg-gray-100 dark:bg-neutral-900 p-3 border border-neutral-200 dark:border-neutral-800">
+                        <div class="flex justify-between">
+                            <span class="flex items-center gap-x-2 uppercase text-sm ">
+                                <PulseDot color="green-600" />
+                                En linea ahora
+                            </span>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                                Resp. habitual 15 min
+                            </p>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-4 mt-5">
+                            <span class="flex items-center gap-x-2 font-medium">
+                                <WhatsAppIcon class="size-5 text-black dark:text-white " />
+                                <p>Escribime directo</p>
+                            </span>
+                            <a href="https://wa.me/5491133333333" target="_blank" rel="noopener noreferrer" class="flex items-center px-4 py-2 justify-center gap-x-2 bg-emerald-200 border-emerald-600 dark:bg-emerald-900 border dark:border-emerald-600 hover:bg-emerald-400 dark:hover:bg-emerald-800 transition-all duration-200 uppercase group">
+                                Escribir por WhatsApp
+                                <ArrowRight class="size-5 text-black dark:text-white group-hover:translate-x-2 transition-all duration-200 " />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
