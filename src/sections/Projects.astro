@@ -33,12 +33,12 @@ const projects = await getCollection('projects');
                     </p>
                 </div>
                 <Image src={entry.data.img} alt={entry.data.title} class="w-full aspect-square h-70 md:h-100" />
-                <div class="grid grid-cols-1 md:grid-cols-2 pt-4 pb-8 gap-4 px-2">
+                <div class="grid grid-cols-1 md:grid-cols-[auto_auto] pt-4 pb-8 gap-4 px-2">
                     <h3 class="font-anton uppercase text-5xl" transition:name={`project-${entry.id}-title`}>
                         {entry.data.title}
                     </h3>
-                    <div class="gap-y-2 md:pl-5 flex flex-col text-sm font-medium">
-                        <p>
+                    <div class="gap-y-2 md:pl-5 flex flex-col ">
+                        <p class="text-end text-sm font-medium">
                             {entry.data.tags.join(', ')}
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-2 overflow-hidden">

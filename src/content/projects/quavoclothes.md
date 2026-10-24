@@ -1,7 +1,7 @@
 ---
-title: QuavoClothes
+title: Dirty Supply
 titleLabel: dsadasdasdas
-titleSEO: QuavoClothes — E-commerce Streetwear Argentina | LSV Systems
+titleSEO: Dirty Supply — E-commerce Streetwear Argentina | LSV Systems
 descriptionLabel: kdaskdask
 descriptionSEO: Tienda online de streetwear argentino. Diseño web y desarrollo e-commerce a cargo de LSV Systems, agencia web Argentina.
 year: '©LSV | 2026'
