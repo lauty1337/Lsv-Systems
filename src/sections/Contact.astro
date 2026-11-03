@@ -3,7 +3,6 @@ import Commerce from '../assets/svgs/Commerce.svg';
 import Company from '../assets/svgs/Company.svg';
 import Flag from '../assets/svgs/Flag.svg';
 import ArrowRight from '../assets/svgs/ArrowRight.svg';
-import WhatsApp from '../assets/svgs/WhatsApp.svg';
 import  PulseDot  from '../components/PulseDot.astro';
 ---
 
@@ -24,76 +23,120 @@ import  PulseDot  from '../components/PulseDot.astro';
         </div>
     </div>
 
-    <div class="flex justify-center max-w-425 mx-auto gap-y-15 md:gap-5">
-        
-        <form action="" method="POST" class="flex flex-col border border-neutral-200 dark:border-neutral-800 p-5 row-span-2">
-
-            <small class="text-gray-600 dark:text-gray-400 uppercase mb-2">01 — Formulario</small>
-            <h3 class="font-anton uppercase text-3xl md:text-4xl ">Especificaciones  iniciales</h3>
-            <div class="flex flex-col  mt-10 gap-5  ">
-                <div class="flex flex-col">
-                    <label class="font-medium uppercase mb-2 ">Tu nombre o empresa *</label>
-                    <input type="text" required aria-required="true" minlength="3" maxlength="30" name="name" placeholder="Ej. Juan Pérez o Studio Pérez" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors" />
-                </div>
-                <div class="flex flex-col">
-                    <label class=" flex mb-2 flex-col ">
-                    <span class="font-medium  uppercase">WhatsApp o email   *</span>
-                    <small class="text-xs text-balance text-gray-600 dark:text-gray-400 uppercase ">(Respondemos por ahí)</small>
-                    </label>
-                    <input type="text"  name="contact" placeholder="Ej. 2364***** o juanperez@gmail.com" minlength="10" maxlength="40" required aria-required="true"
-                    class="border border-neutral-200 dark:border-neutral-800 focus:ring-blue-600 focus:ring-1 focus:outline-none bg-gray-100 dark:bg-neutral-900 p-3" />
-                </div>
+    <form class="border border-neutral-300 dark:border-neutral-800 rounded-md grid md:grid-cols-2 md:max-w-300 md:mx-auto ">
+        <div class="divide-y divide-neutral-300 dark:divide-neutral-800">
+            <div class="flex justify-between items-center p-4">
+                <span class="uppercase text-sm  text-blue-600 font-medium">( 01 - Formulario de contacto )</span>
+                <small class="uppercase text-xs text-neutral-600 dark:text-neutral-400">* Obligatorio</small>
             </div>
 
-            <fieldset class="flex flex-col gap-2 mt-10 md:grid md:grid-cols-2">
-                <legend class="font-medium uppercase mb-2 ">Tipo de proyecto *</legend>
-
-                <label class="bg-gray-100 dark:bg-neutral-900 flex items-center cursor-pointer gap-x-1 border-neutral-200 dark:border-neutral-800 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
-                    <Flag class="size-5 text-black dark:text-white " />
-                    <input type="radio" name="project-type" value="landing-page" class="appearance-none" /> 
-                    <span class="font-medium">Landing page </span>
+            <div class="flex flex-col p-4  gap-y-2  focus-within:bg-neutral-100 transition-colors duration-200"  >
+                <label class="text-xs  uppercase text-neutral-600 dark:text-neutral-400">
+                    <b class="text-blue-600 mr-1 font-medium">01</b> Tu nombre o empresa *
+                </label> 
+                <input type="text" id="client" placeholder="Ej: Toromac" class="text-xl outline-0 " required>
+            </div>
+            
+            <div class="flex flex-col p-4 gap-y-2 focus-within:bg-neutral-100 transition-colors duration-200">
+                <label class="text-xs  uppercase text-neutral-600 dark:text-neutral-400">
+                    <b class="text-blue-600 mr-1 font-medium">02</b> Whatsapp o email *
                 </label>
+                <input type="text" id="address" placeholder="Por aca te respondo" class="text-xl outline-0" required>
+            </div>
+            <fieldset class="flex flex-col">
+                <legend class="text-xs uppercase text-neutral-600 dark:text-neutral-400 p-4">
+                    <b class="text-blue-600 mr-1 font-medium">03</b> 
+                    Tipo de proyecto *
+                </legend>
 
-                <label class="bg-gray-100 dark:bg-neutral-900 flex items-center cursor-pointer gap-x-1 border-neutral-200 dark:border-neutral-800 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
-                    <Company class="size-5 text-black dark:text-white " />
-                    <input type="radio" name="project-type" value="web-institucional"  class="appearance-none" />
-                    <span class="font-medium"> Web Institucional</span>
-                </label>
+                <div class="grid grid-cols-1 divide-y divide-neutral-300 dark:divide-neutral-800">
 
-                <label class="bg-gray-100 dark:bg-neutral-900 flex items-center cursor-pointer gap-x-1 border-neutral-200 dark:border-neutral-800 border p-3 has-[input:checked]:bg-blue-600 has-[input:checked]:text-white hover:border-blue-600  transition-all duration-200 ">
-                    <Commerce class="size-5 text-black dark:text-white " />
-                    <input type="radio" name="project-type" value="ecommerce" class="appearance-none" />
-                    <span class="font-medium">E-commerce <small>(WooCommerce)</small></span>
-                </label>
+                    <label class="flex flex-row justify-between items-center py-4 px-8  cursor-pointer  has-[input:checked]:bg-blue-600 has-[input:checked]:text-white transition-all duration-200 group">
+                        <div class="flex">
+                            <input type="radio" class="appearance-none" value="Landing Page" name="project-type">
+                            <span class="uppercase font-anton group-hover:-translate-x-4 text-2xl transition-transform duration-200">Landing Page</span>
+                        </div>
+                        <span class="flex text-sm uppercase font-medium flex-row items-center gap-x-2">
+                            Desde 
+                            <span class="price">150 USD</span>
+                            <ArrowRight class="group-hover:translate-x-2 group-hover:-translate-y-0.5 duration-200" />
+                        </span>
+                    </label>
+
+                    <label class="flex flex-row justify-between items-center py-4 px-8 cursor-pointer has-[input:checked]:bg-blue-600 has-[input:checked]:text-white group transition-all duration-200 ">
+                        <div class="flex">
+                            <input type="radio" class="appearance-none" value="Web Institucional" name="project-type" >
+                            <span class="uppercase font-anton group-hover:-translate-x-4 text-2xl transition-transform duration-200 ">Web Institucional</span>
+                        </div>
+                        <span class="flex text-sm uppercase font-medium  flex-row items-center gap-x-2">
+                            Desde 
+                            <span class="price">200 USD</span>
+                            <ArrowRight class="group-hover:translate-x-2 group-hover:-translate-y-0.5 duration-200" />
+                        </span>
+                    </label>
+
+                    <label class="flex flex-row justify-between items-center py-4 px-8 cursor-pointer has-[input:checked]:bg-blue-600 has-[input:checked]:text-white transition-all duration-200 group">
+                        <div class="flex">
+                            <input type="radio" class="appearance-none" value="E-Commerce" name="project-type">
+                            <span class="uppercase font-anton group-hover:-translate-x-4 text-2xl transition-transform duration-200">E-Commerce <small class="text-[10px] md:text-xs">(WooCommerce)</small></span>
+                        </div>
+                        <span class="flex text-sm uppercase font-medium flex-row items-center gap-x-2">
+                            Desde 
+                            <span class="price">250 USD</span>
+                            <ArrowRight class="group-hover:translate-x-2 group-hover:-translate-y-0.5 duration-200" />
+                        </span>
+                    </label>
+                    
+                </div>
             </fieldset>
 
-            
-
-            <label class="mt-10 font-medium uppercase mb-2 ">Contexto del proyecto <br> <small class="text-gray-600 dark:text-gray-400">(Opcional)</small> </label>
-            <textarea name="context" maxlength="200" minlength="10" placeholder="Ej. Somos una agencia de marketing digital y queremos crear una landing page para nuestro nuevo producto" class="border focus:ring-blue-600 focus:ring-1 focus:outline-none border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900 p-3 transition-colors resize-none h-25"></textarea>
-
-            <button type="submit" class="mt-10 bg-black dark:bg-white text-white dark:text-black font-medium uppercase p-4 leading-4 text-balance hover:cursor-pointer hover:bg-neutral-700 dark:hover:bg-neutral-400 transition-all duration-300">
-                Solicitar presupuesto & diagnóstico
-            </button>
-            <small class="text-gray-600 dark:text-gray-400 text-xs md:text-sm justify-center flex mt-5 mb-3"> O escríbime por WhatsApp</small>
-            <div class="bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-3  gap-3 flex flex-col md:flex-row
-            md:justify-between">
-                <div class="flex items-center gap-x-3">
-                    <WhatsApp class="size-5 text-black dark:text-white " />
-                    <div class="flex flex-col">
-                        <p class="text-gray-600 dark:text-gray-400 text-xs md:text-sm">¿Preferis contactarme por WhatsApp? </p>
-                        <p class="font-medium text-md md:text-base">Escribime a través de este número </p>
-                    </div>
-                </div>
-                <a href="https://wa.me/5491133333333" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 transition-colors duration-200 gap-x-3 flex items-center justify-center w-full md:w-auto px-4 py-2 bg-emerald-200 border-emerald-600 dark:bg-emerald-900 border dark:border-emerald-600 hover:bg-emerald-400 dark:hover:bg-emerald-800 group">
-                    <span class="text-sm font-medium uppercase text-emerald-600 group-hover:text-emerald-800 dark:group-hover:text-emerald-300 transition-colors duration-200">Escribir por WhatsApp</span>
-                    <ArrowRight class="size-5 text-emerald-600 group-hover:translate-x-2 transition-transform duration-200 " />
-                </a>
+            <div class="flex flex-col p-4 gap-y-2 focus-within:bg-neutral-100 transition-colors duration-200">
+                <label class="text-xs  uppercase text-neutral-600 dark:text-neutral-400">
+                    <b class="text-blue-600 mr-1 font-medium">04</b> Contexto del proyecto (Opcional)
+                </label>
+                <textarea name="context" maxlength="200" id="case" minlength="10" placeholder="Que vendes, a quien y que queres lograr" class="text-xl outline-0"></textarea>
             </div>
-        </form>
-    </div>
+        </div>
+            <aside class="bg-blue-600 p-4 flex flex-col">
+                <p class="text-xs text-white font-medium gap-x-2 flex items-center uppercase">
+                    <PulseDot color="white" />
+                    ( Tu brief · en vivo )
+                </p>
+                <dl class="flex flex-col gap-4 my-10">
+                    <div>
+                        <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Cliente</dt>
+                        <p id="client-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl pb-1">—</p>
+                    </div>
+                    <div>
+                        <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Contacto</dt>
+                        <dd id="contact-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl pb-1">—</dd>
+                    </div>
+                    <div>
+                        <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Proyecto</dt>
+                        <dd id="project-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl  pb-1">—</dd>
+                    </div>
+                    <div>
+                        <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Desde</dt>
+                        <dd id="price-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl  py-3">—</dd>
+                    </div>
+                </dl>
+                <div class="flex flex-col mt-auto gap-4">
+                    <a href="" class="flex items-center justify-between text-white font-anton uppercase text-xl bg-black p-4 hover:bg-white hover:text-blue-600 group transition-all duration-200">
+                        Solicitar presupuesto
+                        <ArrowRight class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+                    </a>
+                    <a href="" class="uppercase justify-between items-center flex text-white border-white border hover:bg-white/20 transition-colors duration-200  p-4">
+                        O escribime por whatsapp
+                        <ArrowRight class="" />
+                    </a>
+                </div>
+            </aside>
+    </form>
+
 
 </section>
+
+
     <script>
         import '../scripts/Contact.js'; 
     </script>
