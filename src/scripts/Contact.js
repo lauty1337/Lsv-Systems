@@ -3,7 +3,6 @@ function actualizarBrief(inputId, exitId) {
     const exit = document.getElementById(exitId)
     exit.textContent = input.value || "—"
 }
-
 document.querySelectorAll('input[name="project-type"]').forEach(radio => {
     radio.addEventListener("change" , () => {
         const valor = radio.value
@@ -12,7 +11,6 @@ document.querySelectorAll('input[name="project-type"]').forEach(radio => {
         document.getElementById("price-brief").textContent = price.textContent
     })
 })
-
 document.getElementById("client").addEventListener("input" , () => {
     actualizarBrief("client", "client-brief")
 })
