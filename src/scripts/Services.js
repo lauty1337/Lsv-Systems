@@ -20,15 +20,14 @@ serviceCard.forEach((card) => {
             scrub: 1,
             start: 'top bottom',
             end: 'bottom top',
-            toggleActions: 'play none none none',
         }
     })
     tlService
     .fromTo(title, { yPercent:-200, rotate: -5,opacity:0, filter: 'blur(3px)'}, {yPercent: 10, opacity:1, filter: 'blur(0px)', rotate: 0, duration: 0.35}, '<')
-    .fromTo(description, {yPercent: 8, opacity:0, filter: 'blur(4px)'}, {yPercent: 0, opacity: 1, filter: 'blur(0px)', duration: 0.2}, '<+=0.1s')
+    .fromTo(description, {yPercent: 8, opacity:0, filter: 'blur(10px)'}, {yPercent: 0, opacity: 1, filter: 'blur(0px)', duration: 0.2}, '<+=0.1s')
     .fromTo(image, { scale: 0.7}, {scale: 1, duration: 0.6}, '<')
-    .fromTo(mobileExplore, {  opacity:0, scale:0.5, filter: 'blur(4px)'}, {opacity:1, scale:1, filter: 'blur(0px)', duration: 0.2}, '<')
-    .fromTo(price, { yPercent:8, opacity:0, filter: 'blur(4px)'}, {yPercent: 0, opacity:1, filter: 'blur(0px)', duration: 0.2}, '<+=0.1s')
+    .fromTo(mobileExplore, {  opacity:0, scale:0.5, filter: 'blur(10px)'}, {opacity:1, scale:1, filter: 'blur(0px)', duration: 0.2}, '<')
+    .fromTo(price, { yPercent:8, opacity:0, filter: 'blur(10px)'}, {yPercent: 0, opacity:1, filter: 'blur(0px)', duration: 0.2}, '<+=0.1s')
 });
 
 

@@ -6,7 +6,7 @@ descriptionLabel: kdaskdask
 descriptionSEO: Tienda online de streetwear argentino. Diseño web y desarrollo e-commerce a cargo de LSV Systems, agencia web Argentina.
 year: '©LSV | 2026'
 time: '10 dias'
-price: '200 USD'
+price: '200'
 tags:
   - E-Commerce
   - Moda
