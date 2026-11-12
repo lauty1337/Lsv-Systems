@@ -1,9 +1,9 @@
 ---
-import Commerce from '../assets/svgs/Commerce.svg';
-import Company from '../assets/svgs/Company.svg';
-import Flag from '../assets/svgs/Flag.svg';
 import ArrowRight from '../assets/svgs/ArrowRight.svg';
 import  PulseDot  from '../components/PulseDot.astro';
+
+// Número de WhatsApp de la empresa: código de país + área + número, solo dígitos (ej. 5491123456789).
+const WHATSAPP_NUMBER = '5490000000000';
 ---
 
 
@@ -23,7 +23,7 @@ import  PulseDot  from '../components/PulseDot.astro';
         </div>
     </div>
 
-    <form class="border border-neutral-300 dark:border-neutral-800 rounded-md grid md:grid-cols-[2fr_1fr] md:max-w-300 md:mx-auto ">
+    <form id="contact-form" data-whatsapp={WHATSAPP_NUMBER} class="border border-neutral-300 dark:border-neutral-800 rounded-md grid md:grid-cols-[2fr_1fr] md:max-w-300 md:mx-auto ">
         <div class="divide-y divide-neutral-300 dark:divide-neutral-800">
             <div class="flex justify-between items-center p-4">
                 <span class="uppercase text-sm  text-blue-600 font-medium">( 01 - Formulario de contacto )</span>
@@ -34,18 +34,12 @@ import  PulseDot  from '../components/PulseDot.astro';
                 <label class="text-xs  uppercase text-neutral-600 dark:text-neutral-400">
                     <b class="text-blue-600 mr-1 font-medium">01</b> Tu nombre o empresa *
                 </label> 
-                <input type="text" id="client" placeholder="Ej: Toromac" class="text-xl outline-0 " required>
+                <input type="text" id="client" name="client" placeholder="Ej: Toromac" autocomplete="organization" minlength="2" maxlength="80" class="text-xl outline-0" required>
             </div>
             
-            <div class="flex flex-col p-4 gap-y-2 focus-within:bg-neutral-100 dark:focus-within:bg-neutral-900 transition-colors duration-200">
-                <label class="text-xs  uppercase text-neutral-600 dark:text-neutral-400">
-                    <b class="text-blue-600 mr-1 font-medium">02</b> Whatsapp o email *
-                </label>
-                <input type="text" id="address" placeholder="Por aca te respondo" class="text-xl outline-0" required>
-            </div>
             <fieldset class="flex flex-col">
                 <legend class="text-xs uppercase text-neutral-600 dark:text-neutral-400 p-4">
-                    <b class="text-blue-600 mr-1 font-medium">03</b> 
+                    <b class="text-blue-600 mr-1 font-medium">02</b> 
                     Tipo de proyecto *
                 </legend>
 
@@ -53,7 +47,7 @@ import  PulseDot  from '../components/PulseDot.astro';
 
                     <label class="flex flex-row justify-between items-center py-4 px-8  cursor-pointer  has-[input:checked]:bg-blue-600 has-[input:checked]:text-white transition-all duration-200 group">
                         <div class="flex">
-                            <input type="radio" class="appearance-none" value="Landing Page" name="project-type">
+                            <input type="radio" class="appearance-none" value="Landing Page" name="projectType" required>
                             <span class="uppercase font-anton group-hover:-translate-x-4 text-2xl transition-transform duration-200">Landing Page</span>
                         </div>
                         <span class="flex text-sm uppercase font-medium flex-row items-center gap-x-2">
@@ -65,7 +59,7 @@ import  PulseDot  from '../components/PulseDot.astro';
 
                     <label class="flex flex-row justify-between items-center py-4 px-8 cursor-pointer has-[input:checked]:bg-blue-600 has-[input:checked]:text-white group transition-all duration-200 ">
                         <div class="flex">
-                            <input type="radio" class="appearance-none" value="Web Institucional" name="project-type" >
+                            <input type="radio" class="appearance-none" value="Web Institucional" name="projectType">
                             <span class="uppercase font-anton group-hover:-translate-x-4 text-2xl transition-transform duration-200 ">Web Institucional</span>
                         </div>
                         <span class="flex text-sm uppercase font-medium  flex-row items-center gap-x-2">
@@ -77,7 +71,7 @@ import  PulseDot  from '../components/PulseDot.astro';
 
                     <label class="flex flex-row justify-between items-center py-4 px-8 cursor-pointer has-[input:checked]:bg-blue-600 has-[input:checked]:text-white transition-all duration-200 group">
                         <div class="flex">
-                            <input type="radio" class="appearance-none" value="E-Commerce" name="project-type">
+                            <input type="radio" class="appearance-none" value="E-Commerce" name="projectType">
                             <span class="uppercase font-anton group-hover:-translate-x-4 text-2xl transition-transform duration-200">E-Commerce <small class="text-[10px] md:text-xs">(WooCommerce)</small></span>
                         </div>
                         <span class="flex text-sm uppercase font-medium flex-row items-center gap-x-2">
@@ -92,9 +86,9 @@ import  PulseDot  from '../components/PulseDot.astro';
 
             <div class="flex flex-col p-4 gap-y-2 focus-within:bg-neutral-100 dark:focus-within:bg-neutral-900 transition-colors duration-200">
                 <label class="text-xs  uppercase text-neutral-600 dark:text-neutral-400">
-                    <b class="text-blue-600 mr-1 font-medium">04</b> Contexto del proyecto (Opcional)
+                    <b class="text-blue-600 mr-1 font-medium">03</b> Contexto del proyecto (Opcional)
                 </label>
-                <textarea name="context" maxlength="200" id="case" minlength="10" placeholder="Que vendes, a quien y que queres lograr" class="text-xl outline-0"></textarea>
+                <textarea name="context" maxlength="200" id="context" minlength="10" placeholder="Qué vendés, a quién y qué querés lograr" class="text-xl outline-0"></textarea>
             </div>
         </div>
             <aside class="bg-blue-600 p-4 flex flex-col">
@@ -105,30 +99,23 @@ import  PulseDot  from '../components/PulseDot.astro';
                 <dl class="flex flex-col gap-4 my-10">
                     <div>
                         <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Cliente</dt>
-                        <p id="client-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl pb-1">—</p>
-                    </div>
-                    <div>
-                        <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Contacto</dt>
-                        <dd id="contact-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl pb-1">—</dd>
+                        <dd id="client-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl pb-1">—</dd>
                     </div>
                     <div>
                         <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Proyecto</dt>
                         <dd id="project-brief" class="border-b border-neutral-300/40 font-anton uppercase text-white text-2xl  pb-1">—</dd>
                     </div>
                     <div>
-                        <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Inversion desde</dt>
+                        <dt class="uppercase text-gray-300 font-medium text-xs md:text-sm">Inversión desde</dt>
                         <dd id="price-brief" class=" font-anton uppercase text-white text-4xl md:text-6xl  py-3">—</dd>
                     </div>
                 </dl>
                 <div class="flex flex-col mt-auto gap-4">
-                    <a href="" class="flex items-center justify-between text-white font-anton uppercase text-xl bg-black p-4 hover:bg-white hover:text-blue-600 group transition-all duration-200">
-                        Solicitar presupuesto
-                        <ArrowRight class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
-                    </a>
-                    <a href="" class="uppercase justify-between items-center flex text-white border-white border hover:bg-white/20 transition-colors duration-200  p-4">
-                        O escribime por whatsapp
-                        <ArrowRight class="" />
-                    </a>
+                    <button type="submit" class="flex items-center justify-between gap-4 text-left text-white font-anton uppercase text-xl bg-black p-4 cursor-pointer hover:bg-white hover:text-blue-600 group transition-all duration-200">
+                        Solicitar presupuesto por WhatsApp
+                        <ArrowRight class="shrink-0 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" />
+                    </button>
+                    <p class="text-xs text-white/80">Se abre WhatsApp con tu brief listo para enviar.</p>
                 </div>
             </aside>
     </form>
